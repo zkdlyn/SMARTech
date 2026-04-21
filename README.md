@@ -1,3 +1,4 @@
+<<<<<<< HEAD
 
   # Prototype 4/22
 
@@ -9,3 +10,18 @@
 
   Run `npm run dev` to start the development server.
   
+=======
+# SMARTech
+**Social Media Auditing and Reporting Technology**
+
+## Project Description
+
+## Objectives
+
+## Team Members
+- Jade Marco Morillo
+- Darlyn Antoinette Baybayon
+- Lindsay Faith Bazar
+- John Carlos Quintero
+- Jose Raphael Mayol
+>>>>>>> 86615e132197d51245cabbe2328aeb20c581786a
