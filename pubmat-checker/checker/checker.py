@@ -112,7 +112,7 @@ POST_TYPE_RULES = {
         "requires_spell_check": "warning",
     },
     "advisory": {
-        "requires_template": T"error",
+        "requires_template": "error",
         "readability_threshold": 0.70,
         "requires_sgd": "error",
         "requires_spell_check": "warning"
