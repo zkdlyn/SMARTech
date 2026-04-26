@@ -1,0 +1,13 @@
+names:
+  0: NYC_Correct
+  1: NYC_Incorrect
+  2: BP_Correct
+  3: BP_Incorrect
+  4: SK_Correct
+  5: SK_Incorrect
+  6: YORP_Correct
+  7: YORP_Incorrect
+path: ./data
+test: images/test
+train: images/train
+val: images/val
