@@ -565,7 +565,7 @@ def check_spelling_on_image(
     passed = len(found_errors) == 0
     result = _make_result(
         passed=passed,
-        label_ok="No spelling errors",
+        label_ok="Spelling OK",
         label_fail=f"{len(found_errors)} spelling error(s) found",
         remark_fail=", ".join(e["word"] for e in found_errors),
         details={"errors": found_errors},
