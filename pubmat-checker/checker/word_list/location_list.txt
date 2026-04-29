@@ -22,28 +22,31 @@ Santo Nio
 Paluan 
 Laguindingan 
 Loboc 
-General Santos City 
+General Santos  
 Bambang 
-City Of Cagayan De Oro 
+Cagayan De Oro 
 Casiguran 
 Pangantucan 
-Tagbilaran City
+Tagbilaran 
 Calanasan 
 Tambulig 
 Valladolid 
 Cantillan 
 Saint Bernard 
 Orani 
-City Of Legazpi 
+Legazpi 
 Katipunan 
 Suquijor
 Pasil 
-City Of Masbate 
+Masbate 
 San Isidro 
 Vincenzo A. Sagun 
+Marikina
+Manila
+Metro Manila
 Roseller Lim 
 Dulag 
-City Of Sipalay 
+Sipalay 
 Tolosa 
 Candijay 
 Bauko 
@@ -57,42 +60,47 @@ Matalom
 Tubod 
 Talakag 
 Asipolo  
-Pe�ablanca 
+Peñablanca 
 Binangonan
+Meycauayan
 Mabini  
 Lutayan 
 Kasibu 
 Opon
-Pagadian City
+Pagadian 
 Saranggani
-City Of Tarlac 
+Tarlac 
 Cagayancillo 
+Parañaque
+Paranaque
 Lagonoy 
 Anahawan 
 Mayantoc 
 Sarangani 
-Masbate (Ticao Island
+Masbate Ticao Island
 Nasugbu 
 Corregidor Island  
 Palanan 
+Imus
+
 Almargro 
-Tanjay City 
+Tanjay  
 Sumilao 
-Dapitan City 
+Dapitan  
 Galimuyod 
 Baleno 
 New Bataan 
 Nunungan 
-Mandaue City 
+Mandaue  
 Mariveles 
 Paracelis 
 Sergio Osme�a Sr. 
-City Of Bais 
+Bais 
 Dipaculao 
 Medellin 
 Aparri 
 Dumalneg 
-Nuevq Ecija
+Nueva Ecija
 Datu Anggal Midtimbang 
 San Antonio 
 Titay 
@@ -114,7 +122,7 @@ Sitangkai
 Kalayaan 
 Malapatan
 Bayombong 
-Tagbilran City 
+Tagbilran  
 Capital
 Leon B. Postigo 
 San Enrique 
@@ -128,26 +136,26 @@ Cabuyao
 Naval 
 Tuguegarao 
 Dinalupihan 
-Legazpi City 
+Legazpi  
 Jose Panganiban 
 Lal-lo 
 Damulog 
-Tandag City 
+Tandag  
 Tudela 
 Concepcion 
 Cagayan
 San Jose abad Santos 
-Butuan City 
+Butuan  
 Igbaras 
 Enrique Villanueva 
 Claver 
 Llorente 
 San Policarpo 
-Sarangani) 
+Sarangani 
 Allacapan 
 Mallig 
-City Of San Pablo 
-City Of Cabuyao 
+San Pablo 
+Cabuyao 
 Vintar 
 Siay 
 Surigao de Sur
@@ -158,10 +166,10 @@ Mabitac
 Veruela 
 Hagonoy 
 Pres.roxas 
-Malaybalay City 
+Malaybalay  
 Pio V. Corpuz  
 Padre Burgos 
-043 km N 78� E Cagwait
+043 km N 78 E Cagwait
 Surallah 
 Tayasan 
 General Tinio 
@@ -169,13 +177,13 @@ Polanco
 Bayag  
 Dupax Del Norte 
 Benito 
-Caramoan )
+Caramoan 
 Bongabong 
 Hindang 
 Madridejos 
 Mahapalag 
 Malvar 
-Victorias City 
+Victorias  
 Liloan 
 Sta Ana 
 Talugtug 
@@ -184,7 +192,7 @@ Apayao
 Matnog 
 Dauis 
 Sominot 
-City Of Tandag 
+Tandag 
 Murcia 
 San Sebastian 
 Sorsogon
@@ -193,18 +201,36 @@ Romblon
 Burgos 
 Tigabauan 
 President Manuel A. Roxas 
-City Of Davao 
-Island Garden City Of Samal
+Davao 
+Island Garden Samal
 Alangalang 
 Babatngon 
 Buadiposo-buntong 
 Agusan Del Norte
-Cadiz City 
+Cadiz  
 Mayorga 
-City Of Valencia 
+Valencia 
 Gubat 
-Do�a Remedios Trinidad 
-Candon City 
+Doña Remedios Trinidad 
+Malabon
+Malate
+Lapu
+Malolos
+Mandaluyong
+Muñoz
+Navotas
+Sagay
+San Carlos
+del 
+Monte
+Tacloban
+Taguig
+Tagum
+Tanauan
+Tangub
+Valenzuela
+Urdaneta
+Candon  
 Lanao Del Sur
 Malabang 
 Candon 
@@ -236,18 +262,18 @@ Bayawan
 Bongabon 
 Wao 
 Infanta 
-City Of Carcar 
+Carcar 
 Marihatag 
 Nueva Ecija
 San Joaquin 
 Guian 
 Taragonna 
 Taal 
-City Of Calaca 
+Calaca 
 Biri 
 Salvador 
  Bukidnon 
-Baguio City
+Baguio 
 Santa Cruz 
 Romblon 
 Libmanan 
@@ -260,21 +286,21 @@ Oton
 Catbalalogan 
 Donsol 
 Tabuelan 
-Tagaytay City
+Tagaytay 
 Compostela Valley
 Jipapad 
 Naujan 
 Benguet
-Mati City 
+Mati  
 Isabela 
 Manticao 
 Mulondo 
 Viga 
-Valencia City 
+Valencia  
 Kiamba 
 Mataas Na Kahoy 
 Sudipen 
-City Of Candon 
+Candon 
 Camalaniugan 
 Tanauan 
 Abulug 
@@ -289,13 +315,13 @@ Bucloc
 Bsay 
 Delfin Albano 
 Tarlac 
-City Of Lipa 
+Lipa 
 Bugallon 
 Tarangnan 
 Lugait 
 General Salipada K. Pendatun 
 Dilasag 
-Ozamis City 
+Ozamis  
 Dumangas 
 Baliguian 
 Asturias 
@@ -308,14 +334,13 @@ Kibungan
 Laua-an 
 Jetafe 
 Maslog 
-City Of Guihulngan 
+Guihulngan 
 Picong 
 Doa Remedios Trinidad 
- Surigao Del Norte
+Surigao Del Norte
 San Isidro
 Batac 
 Braulio E. Dujali 
-057 km from Basco 
 Claveria 
 Pangasinan
 Governor Genoroso 
@@ -323,7 +348,7 @@ Bacarra
 Salcedo 
 Tiwi 
 Guipos 
-Olongapo City 
+Olongapo  
 Maconacon 
 Malinao 
 Lemery 
@@ -341,7 +366,7 @@ Anini-y
 Taft 
 Albor
 South Upi 
-City Of Santa Rosa 
+Santa Rosa 
 Payo
 Monkayo 
 Misamis Oriental
@@ -356,7 +381,7 @@ Prosperidad
 Kananga 
 Curimao 
 Jordan 
-Koronadal City 
+Koronadal  
 Laak  
 Cuyapo 
 Homonhon Island  
@@ -368,41 +393,40 @@ Paete
 Guiuan
 Parang 
 Taiwan Region
-City Of Passi 
+Passi 
 Gutalac 
 Kabayan 
 Calauag 
 Kumalarang 
 M'lang 
-Tarlac City 
+Tarlac  
 Tinambac 
 Sablan 
 Julita 
 Buenavista 
 President Quirino 
 Enrile 
-053 km from Basco 
 Banguingui 
-Iloilo City
+Iloilo 
 Tampilisan 
 Datu Paglas 
-077 km N 73� E Cateel 
+Cateel 
 Palanas 
 Tagoloan II 
 Norala 
-Bago City 
+Bago  
 S.leyte
 Tingloy 
 Aroroy 
 Mamburao 
-Batangas City 
+Batangas  
 Agoo 
 Bontoc 
 Villaviciosa 
 Barira 
 Kiblawan 
 Santa Cruz
-City Of Calbayog 
+Calbayog 
 Sebaste 
 Dinagat 
 Culasi 
@@ -412,7 +436,7 @@ Bansalan
 Madrid 
 Sapad 
 Tigbao 
-City Of Sorsogon 
+Sorsogon 
 Hadji Mohammad Ajul 
 Roxas 
 Panaon 
@@ -423,18 +447,18 @@ Talusan
 Botolan 
 Pamplona 
 Bagabag 
-Iloilo City 
+Iloilo  
 Ferrol 
 Agoncillo 
-San Carlos City 
+San Carlos  
 Candelaria 
 Pitogo  
-Davao City 
+Davao  
 Samboan 
 Paracale 
-Kidapawan City 
+Kidapawan  
 Bay 
-Sipalay City 
+Sipalay  
 Libertad 
 Caibiran 
 Santiago 
@@ -452,7 +476,7 @@ Kadilingan
 San Remigio 
 Cuyo 
 Payao 
- Occidental Mindoro
+Occidental Mindoro
 Siaton 
 Easterm Samar
 Garchitorena 
@@ -465,12 +489,12 @@ Silago
 Bagac 
 Bayawan  
 Manjuyod 
-City Of Dagupan 
+Dagupan 
 Tubo 
 Libog
 Zamboanga Del Norte
-Island Garden City Of Samal 
-San Jacinto )
+Island Garden Samal 
+San Jacinto 
 Ballesteros 
 San Mateo 
 San Esteban 
@@ -480,10 +504,9 @@ Bacong
 Matanog 
 Maco 
 Anilao 
-City Of Victorias 
+Victorias 
 Catarman 
 South Ubian 
-062 km from Basco 
 Verde Island  
 Datu Unsay 
 Luuk 
@@ -498,12 +521,12 @@ Balabagan
 Mayoyao 
 Siatan 
 San Pascual 
-City Of Digos 
+Digos 
 Lumba-bayabao  
 Camarines Surl
 Bagulin 
 Mataas na Kahoy 
-City Of Palayan 
+Palayan 
 Isulan 
 Moncada 
 Santa Barbara 
@@ -519,12 +542,12 @@ Parubcan
 Lanao Del Nortel
 Bangaga 
 Sual 
-Lipa City 
+Lipa  
 Cagbalete Island  
 Medina 
 Corella 
 Negros Occedental
-City Of San Fernando 
+San Fernando 
 Badian 
 Basco 
 Villaba 
@@ -537,18 +560,19 @@ San Agustin
 Vinzons
 Bangar 
 Catubig 
-City Of Calapan 
+Calapan 
 Bindoy 
 Pastrana 
 Gainza 
 Talisay
 Esperanza 
 Sulat 
+Makati
 Diadi 
 Kalamansig 
 Agusan De Sur
 Sigay 
-Tanauan City 
+Tanauan  
 Polilio 
 Mauban
 Guiuan 
@@ -561,7 +585,7 @@ Loon
 Bobon 
 Besao 
 Hinunangan
-Alaminos City 
+Alaminos  
 Trinidad 
 Lumbaca-unayan 
 Palauig 
@@ -571,12 +595,12 @@ Ponot
 San Catalina 
 Rodriguez 
 Lambayong 
-Ormoc City 
+Ormoc  
 Lopog  
 Dumingag 
 Datu Hoffer Ampatuan 
-City Of Kidapawan 
-City Of Dipolog 
+Kidapawan 
+Dipolog 
 Jasaan 
 Rapu-rapu 
 Baybay 
@@ -598,7 +622,7 @@ Calubian
 Alcoy 
 Sapa-sapa 
 Balesin Island  
-City Of Cadiz 
+Cadiz 
 Larena 
 Balangkayan 
 Santa Praxedes 
@@ -616,14 +640,16 @@ Pagudpod
 Lidlidda 
 Saug
 San Nicolas / Talisay
-City Of General Santos 
+General Santos 
 San Nicolas 
 Socorro 
 Loob 
 Jiabong 
 Sagay 
-121 km N 65� E Gigmoto 
-Sergio Osme�a Sr. 
+Pasay
+ Gigmoto 
+Ayala
+Sergio Osmeña Sr. 
 St. Bernard 
 Datu Saudi Ampatuan 
 Buug 
@@ -648,12 +674,12 @@ Trento
 Cordon 
 Tantangan 
 Sallapadan 
-Surigao City 
+Surigao  
 Matalam 
 Sam Jose De Buenavista 
 Sergio Osme A Sr. 
 Tagapul-an 
-Canlaon City 
+Canlaon  
 Luna 
 Umingan 
 Cabarroguis 
@@ -664,14 +690,14 @@ Dumalinao
 San Luis 
 Ampatuan 
 Uyugan 
-Tangub City 
+Tangub  
 Abad Santos 
 Tawi-tawi
 Alimodian 
 Kawayan 
 Sison 
 Inabanga 
-City Of Calamba 
+Calamba 
 Calatrava 
 Irosin 
 Dinagat Islands
@@ -681,14 +707,14 @@ Vallehermoso
 Villaverde 
 Datu Piang 
 Paniqui 
-City Of Davao
+Davao
 Valencia
 Poona Piagapo 
 Gumaca 
 Mambusao 
 Rizal 
 Can-avid 
-City Of Bago 
+Bago 
 Currimao 
 Sultan Gumander 
 Calayaan 
@@ -711,10 +737,10 @@ Saragani
 Nueva Vizcaya
 Baliguan 
 Imelda 
-Do�a Remedios Trinidad 
+Doña Remedios Trinidad 
 Labo 
-Los Ba�os 
-Danao City 
+Los Baños 
+Danao  
 Sultan Kudarat
 Compostela 
 Echague 
@@ -732,34 +758,32 @@ Bulacan
 Santa Magdalena 
 Zamboanga del Norte
 Northen Samar
-City Of El Salvador 
+El Salvador 
 Davao Occidentall
 Angono 
 Pata 
 Hadji Panglima Tahil 
 Bitulok & Sabani
 Dapa 
-Cagayan De Oro City 
+Cagayan De Oro  
 Licuan
 Libacao 
 Gamu 
 Alitagtag 
-San Pablo City 
+San Pablo  
 Mutia 
 San Lorenzo 
 Amlan 
 Arteche 
 Sulu
 Santo Domingo  
-City Of Lucena 
-044 km from Basco 
+Lucena 
 Capiz
 San Jose De Buan 
 Masinloc
- Davao Occidental
+Davao Occidental
 Balatan
 Watu
-064 km N 18� E Pandan 
 Villareal 
 Gabaldon 
 Linamon 
@@ -773,7 +797,7 @@ Miagao
 Victorias 
 Bonifacio 
 Valencia 
-Gingoog City 
+Gingoog  
 Odiongan 
 Davao De Oro
 Maguindanao del Norte
@@ -802,25 +826,25 @@ Sutan Kudarat
 Don Mariano Marcos
 Licuan 
 New Corella 
-Dipolog City
+Dipolog 
 Lanao Del Norte
 Compostella Valley
 Quezon
-020 km N 45� E Abra De Ilog 
+Abra De Ilog 
 Mangatarem 
 Shariff Aguak 
 Plaridel 
 Talacogon 
 Calayan 
-Balanga City 
-City Of Ozamis 
+Balanga  
+Ozamis 
 Pualas 
 Santo Nino 
 Real 
 Barotac Nuevo 
 Pozzorubio 
- Occidental Mindoro 
-Bislig City 
+Occidental Mindoro 
+Bislig  
 Disalag 
 Monreal 
 San Vicente 
@@ -832,31 +856,30 @@ Atimonan
 Danglas 
 Libona 
 National Capital Region
-City Of Maasin 
+Maasin 
 Hamtic 
 Naawan 
-049 km from Basco 
 Bajo De Masinloc  
 Mountain Province
 Jaro 
-055 km from Basco 
+Basco 
 PambuJanuary 
 Sibagat 
 Pintuyan 
-Tacurong City 
+Tacurong  
 Dinulungan 
-City Of Alaminos 
-City Of Cotabato
+Alaminos 
+Cotabato
 Bani 
 San Fernando 
-051 km from Basco 
+
 Cabusao 
 Mahaplag 
 Alabel 
 Victoria 
 Sumisip 
-City Of Tangub 
-City Of Tabuk 
+Tangub 
+Tabuk 
 Guinobatan 
 Santa Rita 
 Binidayan 
@@ -867,19 +890,18 @@ Alabat
 Sinait 
 Cortes 
 Taganaan 
-City Of Tagbilaran 
+Tagbilaran 
 Jagna 
 Cardona 
 Bingawan 
-Anao 
-058 km from Basco 
+Anao  
 Maasin 
 Malita 
 New Lucena 
 San Guillermo 
 Bacolod-kalawi 
 Pandan 
-Alfonso Casta�eda 
+Alfonso Castañeda 
 Cuenca 
 Badiangan 
 Ilocos Norte
@@ -889,8 +911,8 @@ Rapu - Rapu
 Davao Del Norte
 Tublay 
 Malay 
-Dagupan City
-Samal) 
+Dagupan 
+Samal
 Zarraga 
 Mahayag 
 Sindangan 
@@ -903,12 +925,12 @@ Lawaan
 San Mariano 
 Capul 
 Negros Occidental
-City Of Cagayan De Oro
+Cagayan De Oro
 Dangcagan 
-City Of Iligan 
+Iligan 
 La Libertad 
 Babuyan Island  
-City Of San Carlos 
+San Carlos 
 Gitagum 
 Lope De Vega 
 Hinatuan 
@@ -939,22 +961,22 @@ Daram
 Eastern Samar
 AninI
 Angkaki
-Laoag City
+Laoag 
 Baao 
 Naga 
 Narvacan 
 Tanudan 
-Lapu-lapu City  
-La Carlota City 
+Lapu-lapu   
+La Carlota  
 Dingras 
 Cervantes 
 Carrascal 
 Palimbang 
-City Of Lamitan 
+Lamitan 
 Matuguinao 
 San Andres
 Amduntog
-Zamboanga City 
+Zamboanga  
 Polangui 
 Calolbon  
 Banganga 
@@ -963,7 +985,7 @@ Zamboanga Sibugay
 Pampanga
 General Macarthur 
 Albay
-008 km S 75� E New Batan 
+New Bataan 
 Calatagan 
 Alcala 
 Pulupandan 
@@ -982,7 +1004,6 @@ Magallon
 Limbuhan
 Pasuquin 
 Kadingilan 
-061 km from Basco 
 Masinloc 
 Midsayap 
 Paranas
@@ -990,7 +1011,7 @@ Itogon
 Dona Remedios Trinidad 
 Talavera 
 Pitogo 
-Panabo City 
+Panabo  
 Pio V. Corpus  
 Cebu
 Lagawe 
@@ -1010,7 +1031,7 @@ Tumauini
 Gasan 
 Guinsiliban 
 Basilan
-Tagbilaran City 
+Tagbilaran  
 San Lorenzo Ruiz  
 Lala 
 Batanagas
@@ -1029,33 +1050,34 @@ Pura
 Catbalogan 
 Kapangan 
 Mankayan 
-City Of Cabadbaran 
+Cabadbaran 
 Dauin 
 Sibalom 
 Labason 
 Oriental
 Bangued 
 Sirawai 
-Baguio City 
+Baguio  
 Oslob 
 Ramos 
 General Luna 
 Samar
-Naga City 
+Naga  
 Mainit 
 Bacaycay 
-10km from Masbate City
-064 km from Basco 
+Masbate
+Basco 
 Manito 
 Kalibo 
 Bauguen  
-City Of Silay 
+Silay 
 Barobo 
 Balete 
 Cotabato
 San Jorge 
-Sag�ay 
-Escalante City 
+Sag�ay
+Carmona
+Escalante  
 Balangiga 
 Coron 
 Eastren Samar
@@ -1068,30 +1090,30 @@ Taragonna
 Siocon 
 Lacub 
 Binmaley 
-Oriemtal Mindoro
+Oriental Mindoro
 Canaman 
 Siayan 
 Cabadbaran 
 Bulusan 
 Malibcong 
 Guimaras
-Santo Ni�o 
+Santo Niño 
 Pili 
 Mawab 
 Ligao 
-044 km from Kidapawan City
+Kidapawan 
 Abra De Ilog 
-City Of Toledo 
+Toledo 
 Magsaysay 
 Pambujan 
-City Of Talisay 
-City Of Pasig 
+Talisay 
+Pasig 
 Adams 
 Bataan
 Calamba 
 Occ.mindoro
 Pinamalayan 
-Masbate City 
+Masbate  
 Siruma 
 Remedios Romualdez 
 Antipas 
@@ -1118,7 +1140,7 @@ Camarines Norte
 Santa Margarita 
 Las Nievas 
 Patnanungan 
-Talisay City 
+Talisay  
 Camiling 
 Jose Abad Santos
 Catanauan 
@@ -1134,7 +1156,9 @@ Padre Garcia
 Paranas 
 Sugpon 
 Looc 
-Bacolod City 
+Bacolod  
+Bacoor
+Baliwag
 Bacon 
 Paoay 
 Bayasbas 
@@ -1147,7 +1171,7 @@ Sikatuna
 Bato 
 Bangui 
 Banton 
-Borongan City
+Borongan 
 Camalig 
 Vigan 
 Lagangilang 
@@ -1156,33 +1180,33 @@ Don Victoriano Chiongbian
 Kibawe 
 Tuao 
 Ilocos Sur
-Tagaytay City 
+Tagaytay  
 Salcedo
 General Luna
-City Of Baguio 
+Baguio 
 Ifugao
-City Of Malaybalay 
-City Of Canlaon 
+Malaybalay 
+Canlaon 
 Bansud 
 Batanes
 Olutanga 
-Saranani) 
+Saranani 
 Camarines Sur
-Vigan City 
-Borongan City 
+Vigan  
+Borongan  
 Tapaz 
-City Of Surigao 
+Surigao 
 Caraga 
-City Of Santiago
+Santiago
 Datu Montawal 
 Hinunangan 
 Bamban 
 Magsingal 
-Dumaguete City 
+Dumaguete  
 Alfonso 
 Daguioman 
 Santa Maria 
-City Of Bislig 
+Bislig 
 Gigaquit 
 Naguilian 
 Asipolo 
@@ -1190,11 +1214,11 @@ Bacnotan
 Nagcarlan 
 Pila 
 Kiangan 
-Dumaguete City
+Dumaguete 
 Nuling
 Ubay 
 Marogong 
-City Of Cavite
+Cavite
 Impasug-ong 
 Dao 
 Jose Abad Santos 
@@ -1212,11 +1236,11 @@ Jabonga
 Caba 
 Northern Samar
 Governor Generoso 
-Municipality Of Sarangani
+Sarangani
 Pio V. Corpuz 
 Basey 
 Catigbian 
-Calapan City 
+Calapan  
 Southern Leyte
 Hinoba-an 
 La union
@@ -1224,19 +1248,19 @@ Canlaon
 Sigma 
 Divilacan 
 Pinamungahan 
-Cotabato (North Cotabato)
+Cotabato 
+North Cotabato
 Sipalay 
 Mendez 
-(Iloilo
+Iloilo
 Dinas 
 Talim Island 
 Tayum 
 San Jose de Buan 
 Cagdianao 
 Cabanglasan 
-City Of Ilagan 
+Ilagan 
 Sultan Naga Dimaporo 
-032 km from Basco 
 Macrohon 
 San Mariano
 Montevista 
@@ -1247,7 +1271,7 @@ Caluya
 San Rafael 
 Limasawa 
 Bilar 
-City Of Kabankalan 
+  Kabankalan 
 Agusan del Norte
 Rizal
 San Quintin 
@@ -1256,11 +1280,11 @@ Manolo Fortich
 Manukan 
 Sadanga 
 Barili 
-Cotabato City
+Cotabato 
 Binalonan 
 Sagada 
-City Of Pagadian 
-City Of Ligao 
+  Pagadian 
+  Ligao 
 Lambunao 
 Bayog 
 San Ildefonso 
@@ -1272,16 +1296,16 @@ Koronadal
 Baliangao 
 Sarrat 
 Libagon 
-Lucena City 
+Lucena  
 Sablayan 
 Teresa 
-Laoag City 
+Laoag  
 San Juan de Buan 
 Flora 
 Torrijos 
 Kayapa 
-City Of Sagay 
-City Of Laoag 
+  Sagay 
+ Laoag 
 Kauswagan 
 Aloguinsan 
 Lake Sebu 
@@ -1291,9 +1315,9 @@ Camiguin
 Salvador Benedicto 
 Tupi 
 Maramag 
-Tagum City 
-City Of Tanjay 
-Kabankalan City 
+Tagum  
+ Tanjay 
+Kabankalan  
 San Marcelino 
 Tagoloan 
 Banaue 
@@ -1314,9 +1338,9 @@ Matag-ob
 Pio V. Corpus 
 Kabasalan 
 Panay 
-Angeles City 
+Angeles  
 San Policarpio 
-Guihulngan City 
+Guihulngan  
 Capoocan 
 Tomas Oppus 
 Borongan 
@@ -1328,10 +1352,10 @@ Solsona
 Gandara 
 Polillo
 Maragusan  
-City Of Iriga 
+Iriga
 Labangan 
-Oroquieta City 
-Palayan City 
+Oroquieta  
+Palayan  
 Baco 
 San Ricardo 
 Baculin 
@@ -1349,22 +1373,22 @@ Boljoon
 Piagapo 
 Madalag 
 Davao Del Sur
-City Of Zamboanga 
+Zamboanga 
 Binangonan 
 San Jose De Buenavista 
-City Of Naga 
+Naga 
 Bunawan 
 Bula 
 Ganassi 
 Cabalian  
-Maasin City 
+Maasin  
 Getafe 
 Datu Salibo 
-City Of Bayugan 
-City Of Panabo 
-City Of Butuan 
+Bayugan 
+Panabo 
+Butuan 
 Zamboanga del Sur
-Bais City 
+Bais  
 Cataduanes
 Banaybanay 
 Loreto 
@@ -1382,9 +1406,9 @@ Mauban
 Tanay 
 Tiaong 
 Barcelona 
-Cabadbaran City 
+Cabadbaran  
 Aurora
-City Of La Carlota 
+La Carlota 
 Panglao 
 Tulunan 
 Nasipit 
@@ -1406,10 +1430,10 @@ Banisilan
 Sultan Kudarat  
 La Union
 Nueva Vizcaya 
-City Of Iloilo
+Iloilo
 Tubungan 
 Luzurriaga
-City Of Batac 
+Batac 
 Tigbauan 
 San Andres 
 Piat 
@@ -1418,33 +1442,33 @@ Masbate
 Libon 
 Santa Monica 
 Santa Teresita 
-Dipolog CIty 
-Silay City 
+Dipolog  
+Silay  
 Las Navas 
 Saguday 
 Santo Domingo 
 Bacatan  
 Baungon 
 Remedios T. Romualdez 
-City Of Iloilo 
-Ormoc City
+Iloilo 
+Ormoc 
 Sultan Mastura 
 Mambajao 
 Samal 
-City Of Himamaylan 
+Himamaylan 
 Morong 
 Bucay 
 Baliango 
 Davao Orinetal
 Luzzuriaga  
-City Of Tacurong 
+Tacurong 
 Abucay 
 Lasam 
 Sultan Sa Barongis  
 Pi�an 
-City Of Zamboanga
+Zamboanga
 Pagudpud 
-Cotabato City 
+Cotabato  
 Don Marcelino 
 Pantukan 
 Jimalalud 
@@ -1452,7 +1476,7 @@ Ramon
 Talisay 
 Kalawit 
 Maitum 
-Kidapawan City
+Kidapawan 
 Lian 
 Virac 
 Catmon 
@@ -1467,14 +1491,14 @@ Cabagan
 Saiyan 
 Norzagaray 
 Hinundayan 
-City Of Bayawan 
+Bayawan 
 Taragonna Davao 
-City Of Koronadal 
+ 
 Tineg 
 Iba 
 Lazi 
 Buhi 
-City Of Cotabato 
+Cotabato 
 Biliran 
 Pigkawayan 
 Alburquerque 
@@ -1484,23 +1508,23 @@ Rosales
 Baclayon 
 Sarangani
 Oras 
-City Of Bogo 
+Bogo 
 Eatern Samar
 Pantabangan 
 Oriental Mindoro
 Santa Marcela 
-Batangas City
+Batangas 
 Garcia Hernandez 
 San Narciso 
 Lavezares 
 Carmen 
 Lanao del Sur
 Bayabas 
-Iligan City 
+Iligan  
 Pililla 
 Cauayan 
-Bayugan City 
-San Jose City 
+Bayugan  
+San Jose  
 Abra
 Balindong 
 Jolo 
@@ -1512,7 +1536,7 @@ San Fernando
 Occidental
 Marabut 
 Escalante 
-Digos City 
+Digos  
 Mati 
 Natividad 
 Presentacion  
@@ -1525,25 +1549,24 @@ Capalonga
 Magalang 
 Balbalan 
 Solano 
-City Of Gingoog 
+Gingoog 
 Sultan Sa Barongis 
 San Juan 
 Cataingan 
 Pototan 
 Luzurriaga  
-City Of Santiago 
+Santiago 
 Leyte 
 Davao del Norte
 Sominot  
 san Francisco 
-056 km from Basco 
 Bansala 
-060 km from Laak 
-City Of Antipolo 
-Iriga City 
+Laak 
+Antipolo 
+  
 Basay 
 Maguing 
-City Of Catbalogan 
+Catbalogan 
 San Gabriel 
 Licuan-baay  
 Margosatubig 
@@ -1560,45 +1583,44 @@ Aguinaldo
 Midsalip 
 Malungon 
 Nabas 
-City Of Santo Tomas 
-059 km from Basco 
+Santo Tomas 
 Basud 
 Patnongon 
 Moises Padilla  
 San Fabian 
 Benito Soliven 
-City Of Butuan
+Butuan
 Surigao De Norte
 Valderrama 
-Mabalacat City 
-City Of Dapitan 
+Mabalacat  
+Dapitan 
 Mulanay 
 Governor Generoso
 Castillejos 
-Dipolog City 
+Dipolog  
 Gabaldon  
 Guimbal 
 Nabua 
 La Paz 
-Passi City 
+Passi  
 Dumanjug 
 Lucban 
 Toboso 
 Nampicuan 
 Liloy 
-Ligao City 
-Toledo City 
+Ligao  
+Toledo  
 Calintaan 
 Kidapawan 
 Josefina 
-Calbayog City 
+Calbayog  
 Agdangan 
 Imelda
 Barbaza 
 Prieto Diaz 
 Pagayawan 
 Cabangan 
-32 km from Ibajay 
+Ibajay 
 Banga 
 Mabalacat 
 Aguilar 
@@ -1609,7 +1631,7 @@ Madalum
 Polomolok 
 Maria 
 Surigao Del Sur
-Legazpi City
+Legazpi 
 Tinglayan 
 Sanchez-mira 
 Santa Lucia 
@@ -1627,7 +1649,7 @@ Lupon
 Badoc 
 Bulan 
 Suyo 
-City Of Marawi 
+Marawi 
 Madamba 
 Giporlos 
 Kitcharao 
@@ -1642,28 +1664,28 @@ Daet
 Opol 
 Gattaran 
 Calasiao 
-Pagadian City 
+Pagadian  
 Talayan 
 Kalingalan Caluang 
-Los Ba�os 
+Los Baños 
 Bugasong 
 Initao 
 San Emilio 
-City Of Isabela 
+Isabela 
 Silvino Lobos 
 Columbio 
 Guimba 
 Manay 
 Sulop 
 Barugo 
-047 km from Basco 
+
 Limay 
 Masbate 
 Guihulngan 
 Talalora 
 Corcuera 
 Ayungon 
-Cebu City 
+Cebu  
 Villanueva 
 017 km S 45� W oF Sarangani 
 Loay 
@@ -1672,10 +1694,10 @@ Fuga Island
 Pagbilao 
 Bauang 
 Datu Odin Sinsuat 
-Davao City
+Davao 
 Santa Catalina 
 Liwan
-Sagay City 
+Sagay  
 Padada 
 Polillio 
 Sorsogon 
@@ -1683,7 +1705,7 @@ Maragusan
 Parang
 Boliney 
 Hilongos 
-City Of Tagum 
+Tagum 
 Mapanas 
 Poona Bayabao 
 Bakun 
@@ -1692,10 +1714,10 @@ Palo
 Mabini 
 Sogod 
 Matanao 
-City Of Mati 
+Mati 
 Sarangani Island  
-Tuguegarao City 
-City Of Roxas 
+Tuguegarao  
+Roxas 
 San Felipe 
 Tagudin 
 Juban 
@@ -1709,7 +1731,7 @@ Bindoy
 General Mamerto Natividad 
 Bohol
 Mapandan 
-Surigao City
+Surigao 
 Ragay 
 Cawayan 
 Barlig 
@@ -1717,7 +1739,9 @@ Tobias Fornier
 Bauan 
 San Vicente
 Puerto Galera 
-City Of Bacolod 
+Princesa
+
+Bacolod 
 Gen. S. K. Pendatun 
 Quirino 
 Cagdiano 
@@ -1730,12 +1754,13 @@ Siquijor
 Pikit 
 Orion 
 Guinayangan 
-City Of Borongan 
+Borongan 
 Poro 
-Licuan - Baay 
-City Of Cauayan 
-City Of Baybay 
-City Of Vigan 
+Licuan
+Baay 
+Cauayan 
+Baybay 
+Vigan 
 San Pablo 
 Isabela
 Minglanilla 
@@ -1745,7 +1770,7 @@ Alfonso Lista
 Santa Rosa 
 Dolores 
 Maguindanao Del Norte
-033 km S 28� W Governor Generoso 
+Generoso 
 Polillo 
 Cajidiocan 
 Panganiban  
