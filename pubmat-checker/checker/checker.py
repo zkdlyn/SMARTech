@@ -79,7 +79,8 @@ SPELL_WORD_LISTS = [
     "word_list/filipino_word_list.txt",
     "word_list/hiligaynon_word_list.txt",
     "word_list/ilocano_word_list.txt",
-    "word_list/cebuano_word_list.txt"
+    "word_list/cebuano_word_list.txt",
+    "word_list/location_list.txt",
 
 ]
 
@@ -308,7 +309,7 @@ def check_sgd(ocr_words: list) ->dict:
 
 def check_photo_quality(image) ->dict:
     """
-    Photo-specific quality checks: resolution, subject centering, brightness,
+    Photo-specific quality checks: resolution, brightness
     and colour saturation.
     Applied to: photo.
 
