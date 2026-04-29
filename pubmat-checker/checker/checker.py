@@ -625,42 +625,66 @@ def generate_report(image, logo_model, post_type: str, collaborators:list=None) 
 
     # Conditional checks based on post type rules:
     
+    # Readability check
+    if "readability_threshold" in rules:
+        threshold = rules["readability_threshold"]
+        readability = check_readability(ocr_confidences, threshold=threshold)
+        audit["readability"] = readability
+    
+    readability_ok = audit["readability"]["pass"] if "readability" in audit else True
+    no_text = len(content_words) == 0
+
+    ocr_unreliable = not readability_ok or no_text
+
     # Watermark check
 
     if rules.get("requires_watermark"):
-        bottom_pairs = [(w, b) for w, b in zip(ocr_words, ocr_boxes) if b[1] >= 0.85]
-        watermark_result, watermark_boxes_abs = check_watermark(
-            image,
-            precomputed_words=[p[0] for p in bottom_pairs],
-            precomputed_boxes=[p[1] for p in bottom_pairs],
-        )
-        audit["watermark"] = watermark_result
-        for (x0, y0, x1, y1) in watermark_boxes_abs:
-            cv2.rectangle(img_annotated, (x0, y0), (x1, y1), (255, 200, 0), 1)
-        label_text = "Watermark OK" if watermark_result["pass"] \
-            else f"Watermark MISSING: {', '.join(watermark_result['missing'])}"
-        
-        color = (0, 255, 0) if watermark_result["pass"] else (255, 0, 0)
-        cv2.putText(img_annotated, label_text, (10, h_img - 20), cv2.FONT_HERSHEY_SIMPLEX, 0.55, color, 2)
+        if ocr_unreliable:
+            audit["watermark"] = {
+                "pass": False,
+                "level": "warning",
+                "label": "Watermark check skipped",
+                "remark": "OCR unreliable: poor readability or no text detected",
+                "details": {},
+                "missing": [],
+        } 
+        else:
+            bottom_pairs = [(w, b) for w, b in zip(ocr_words, ocr_boxes) if b[1] >= 0.85]
+            watermark_result, watermark_boxes_abs = check_watermark(
+                image,
+                precomputed_words=[p[0] for p in bottom_pairs],
+                precomputed_boxes=[p[1] for p in bottom_pairs],
+            )
+            audit["watermark"] = watermark_result
+            for (x0, y0, x1, y1) in watermark_boxes_abs:
+                cv2.rectangle(img_annotated, (x0, y0), (x1, y1), (255, 200, 0), 1)
+            label_text = "Watermark OK" if watermark_result["pass"] \
+                else f"Watermark MISSING: {', '.join(watermark_result['missing'])}"
+            
+            color = (0, 255, 0) if watermark_result["pass"] else (255, 0, 0)
+            cv2.putText(img_annotated, label_text, (10, h_img - 20), cv2.FONT_HERSHEY_SIMPLEX, 0.55, color, 2)
 
     # filter out bottom strip (watermark) for readability and spell check
     filtered = [(w, b, c) for w, b, c in zip(ocr_words, ocr_boxes, ocr_confidences)
             if w.lower() not in WATERMARK_HANDLES]
     content_words       = [f[0] for f in filtered]
     content_boxes       = [f[1] for f in filtered]
-    content_confidences = [f[2] for f in filtered]
 
-    # Readability check
-    if "readability_threshold" in rules:
-        threshold = rules["readability_threshold"]
-        readability = check_readability(content_confidences, threshold=threshold)
-        audit["readability"] = readability
-    
+
     # Spelling check
     if rules.get("requires_spell_check"):
-        img_annotated, spell_result = check_spelling_on_image(
-        img_annotated, content_words, content_boxes)
-        audit["spelling"] = spell_result
+        if ocr_unreliable:
+            audit["spelling"] = {
+                "pass": True,   # True so it doesn't trigger an error-level fail
+                "level": "warning",
+                "label": "Spelling check skipped",
+                "remark": "OCR unreliable: poor readability or no text detected",
+                "details": {"errors": []},
+            }
+        else:
+            img_annotated, spell_result = check_spelling_on_image(
+            img_annotated, content_words, content_boxes)
+            audit["spelling"] = spell_result
 
     # SGD check
     if rules.get("requires_sgd"):
