@@ -11,7 +11,8 @@
       "logo_order": true,
       "watermark": true,
       "pubmat_quality": true,
-      "readability": true
+      "readability": true,
+      "spelling": true
     },
     "notes": "Watermark Missing"
   },
@@ -408,7 +409,7 @@
   },
   {
     "image": "test_30.jpg",
-    "post_type": "news",
+    "post_type": "other",
     "collaborators": [
       "sk",
       "yorp"
@@ -421,7 +422,8 @@
       "logo_order": false,
       "watermark": false,
       "pubmat_quality": true,
-      "readability": true
+      "readability": true,
+      "spelling":true
     },
     "notes": "BP logo not present. Logo order invalid. Watermark missing."
   },
@@ -440,7 +442,7 @@
   },
   {
     "image": "test_32.jpg",
-    "post_type": "hiring",
+    "post_type": "opportunity",
     "collaborators": [],
     "ground_truth": {
       "logo_nyc": true,
@@ -617,14 +619,15 @@
   },
   {
     "image": "test_44.jpg",
-    "post_type": "photo",
+    "post_type": "resolution",
     "collaborators": [],
     "ground_truth": {
       "logo_nyc": true,
       "logo_bp": true,
       "logo_order": true,
       "pubmat_quality": true,
-      "photo_quality": true
+      "readability": true,
+      "sgd": false
     },
     "notes": ""
   },
@@ -814,7 +817,7 @@
   },
   {
     "image": "test_60.jpg",
-    "post_type": "hiring",
+    "post_type": "opportunity",
     "collaborators": [],
     "ground_truth": {
       "logo_nyc": true,
@@ -1066,14 +1069,16 @@
   },
   {
     "image": "test_76.png",
-    "post_type": "photo",
+    "post_type": "other",
     "collaborators": [],
     "ground_truth": {
       "logo_nyc": true,
       "logo_bp": true,
       "logo_order": true,
       "pubmat_quality": true,
-      "photo_quality": true
+      "readability": true,
+      "watermark": true,
+      "spelling": true
     },
     "notes": ""
   },
@@ -1237,16 +1242,18 @@
   },
   {
     "image": "test_88.jpg",
-    "post_type": "photo",
+    "post_type": "holiday",
     "collaborators": [],
     "ground_truth": {
       "logo_nyc": true,
       "logo_bp": true,
       "logo_order": true,
+      "watermark": false,
       "pubmat_quality": true,
-      "photo_quality": true
+      "readability": true,
+      "spelling": false
     },
-    "notes": ""
+    "notes": "Misspelled Independence, watermark missing."
   },
   {
     "image": "test_89.jpg",
@@ -1448,8 +1455,69 @@
       "logo_bp": true,
       "logo_order": true,
       "pubmat_quality": true,
-      "readability": false
+      "readability": false,
+      "spelling":false
     },
     "notes": "Text too small."
+  },
+  {
+    "image": "test_104.jpg",
+    "post_type": "other",
+    "collaborators": [],
+    "ground_truth": {
+      "logo_nyc": true,
+      "logo_bp": true,
+      "logo_order": true,
+      "pubmat_quality": true,
+      "readability": true,
+      "spelling": true,
+      "watermark": true
+    },
+    "notes": ""
+  },
+  {
+    "image": "test_105.jpg",
+    "post_type": "holiday",
+    "collaborators": [],
+    "ground_truth": {
+      "logo_nyc": true,
+      "logo_bp": true,
+      "logo_order": true,
+      "pubmat_quality": false,
+      "watermark": false,
+      "readability": true,
+      "spelling": false
+    },
+    "notes": "Spelling error, low resolution image, missing watermark"
+  },
+  {
+    "image": "test_106.jpg",
+    "post_type": "holiday",
+    "collaborators": ["sk", "yorp"],
+    "ground_truth": {
+      "logo_nyc": false,
+      "logo_bp": true,
+      "logo_order": true,
+      "pubmat_quality": true,
+      "readability": true,
+      "spelling": true,
+      "watermark": true
+    },
+    "notes": ""
+  },
+  {
+    "image": "test_107.jpg",
+    "post_type": "opportunity",
+    "collaborators": [],
+    "ground_truth": {
+      "logo_nyc": true,
+      "logo_bp": true,
+      "logo_order": true,
+      "pubmat_quality": false,
+      "readability": true,
+      "spelling": true,
+      "watermark": true
+    },
+    "notes": ""
   }
 ]
