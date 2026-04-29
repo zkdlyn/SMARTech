@@ -353,7 +353,7 @@ def check_photo_quality(image) ->dict:
         label_fail="Photo quality issues",
         remark_fail=" | ".join(issues),
         details=details,
-        # level ="warning",
+        level ="warning",
     )
 
 def check_logo_order(detected:dict, collaborators:list=None) -> dict:
@@ -479,7 +479,7 @@ def logo_report(image, model, conf_threshold:float=0.8, collaborators:list=None)
         "level":   "error",
         "label":   "All logos OK" if all_pass else "Logo issues found",
         "remark":  "OK" if all_pass else f"{sum(1 for r in report if not r['pass'])} logo(s) failed",
-        "details": {"logos": report},   # individual results still accessible here
+        "details": {"logos": report},   
     }, detected, annotated
 
 
@@ -548,7 +548,7 @@ def check_spelling_on_image(
         if clean_word not in misspelled_set:
             continue
  
-        # Convert relative → absolute pixel coordinates
+        # Convert relative to absolute pixel coordinates
         x0 = int(x0_r * w_img)
         x1 = int(x1_r * w_img)
         y1 = int(y1_r * h_img)
@@ -613,10 +613,6 @@ def generate_report(image, logo_model, post_type: str, collaborators:list=None) 
 
     # OCR on masked image: logos and watermark strip are blank 
     ocr_words, ocr_confidences, ocr_boxes = _extract_ocr_data(_run_doctr(masked_image))
-    # filter out bottom strip (watermark) for readability and spell check
-    content_confidences = [c for c, b in zip(ocr_confidences, ocr_boxes) if b[1] < 0.85]
-    content_words       = [w for w, b in zip(ocr_words, ocr_boxes) if b[1] < 0.85]
-    content_boxes       = [b for b in ocr_boxes if b[1] < 0.85]
 
 
     # Logo Order Check
@@ -647,7 +643,13 @@ def generate_report(image, logo_model, post_type: str, collaborators:list=None) 
         color = (0, 255, 0) if watermark_result["pass"] else (255, 0, 0)
         cv2.putText(img_annotated, label_text, (10, h_img - 20), cv2.FONT_HERSHEY_SIMPLEX, 0.55, color, 2)
 
-        
+    # filter out bottom strip (watermark) for readability and spell check
+    filtered = [(w, b, c) for w, b, c in zip(ocr_words, ocr_boxes, ocr_confidences)
+            if w.lower() not in WATERMARK_HANDLES]
+    content_words       = [f[0] for f in filtered]
+    content_boxes       = [f[1] for f in filtered]
+    content_confidences = [f[2] for f in filtered]
+
     # Readability check
     if "readability_threshold" in rules:
         threshold = rules["readability_threshold"]
