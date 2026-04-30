@@ -632,8 +632,7 @@ def generate_report(image, logo_model, post_type: str, collaborators:list=None) 
         audit["readability"] = readability
     
     readability_ok = audit["readability"]["pass"] if "readability" in audit else True
-    no_text = len(content_words) == 0
-
+    no_text = len(ocr_words) == 0
     ocr_unreliable = not readability_ok or no_text
 
     # Watermark check
