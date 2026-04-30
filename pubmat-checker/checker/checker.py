@@ -327,14 +327,14 @@ def check_photo_quality(image) ->dict:
     end_y = int(h * 0.80)
     # crop out template 
     cropped = image[0:end_y, 0:w]
-
+    cropped_gray = gray[0:end_y, 0:w]
     # Resolution
     details["resolution"] = f"{w}x{h} (required at least {min_w}x{min_h})"
     if w < min_w or h < min_h:
         issues.append(f"Image is {w}x{h}, minimum is {min_w}x{min_h}")
 
     # Brightness
-    mean_brightness = float(np.mean(cropped))
+    mean_brightness = float(np.mean(cropped_gray))
     details["brightness"] = round(mean_brightness, 1)
     if mean_brightness < 60:
         issues.append("Image appears dark")
