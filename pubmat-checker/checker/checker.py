@@ -70,7 +70,7 @@ def _make_result(passed: bool, label_ok: str, label_fail: str,
         "label": label_ok if passed else label_fail,
         "remark": remark_ok if passed else remark_fail,
         "details": details or {},
-
+        "level": level,
     }
 
 SPELL_WORD_LISTS = [
