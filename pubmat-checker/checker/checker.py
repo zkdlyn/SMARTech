@@ -664,7 +664,7 @@ def generate_report(image, logo_model, post_type: str, collaborators:list=None) 
             color = (0, 255, 0) if watermark_result["pass"] else (255, 0, 0)
             cv2.putText(img_annotated, label_text, (10, h_img - 20), cv2.FONT_HERSHEY_SIMPLEX, 0.55, color, 2)
 
-    # filter out bottom strip (watermark) for readability and spell check
+    # filter out bottom strip (watermark) for spell check
     filtered = [(w, b, c) for w, b, c in zip(ocr_words, ocr_boxes, ocr_confidences)
             if w.lower() not in WATERMARK_HANDLES]
     content_words       = [f[0] for f in filtered]
