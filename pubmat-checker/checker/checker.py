@@ -324,6 +324,9 @@ def check_photo_quality(image) ->dict:
     min_w, min_h = 1080, 1080
     issues = []
     details = {}
+    end_y = int(h * 0.80)
+    # crop out template 
+    cropped = image[0:end_y, 0:w]
 
     # Resolution
     details["resolution"] = f"{w}x{h} (required at least {min_w}x{min_h})"
@@ -331,17 +334,15 @@ def check_photo_quality(image) ->dict:
         issues.append(f"Image is {w}x{h}, minimum is {min_w}x{min_h}")
 
     # Brightness
-    mean_brightness = float(np.mean(gray))
+    mean_brightness = float(np.mean(cropped))
     details["brightness"] = round(mean_brightness, 1)
     if mean_brightness < 60:
         issues.append("Image appears dark")
+    elif mean_brightness > 200:
+        issues.append("Image appears too bright or overexposed")
 
     # Colour saturation
-    h, w = image.shape[:2]
-
-    end_y = int(h * 0.80)
-    # crop out colored template 
-    cropped = image[0:end_y, 0:w]
+    
     hsv = cv2.cvtColor(cropped, cv2.COLOR_BGR2HSV)
     s = hsv[:, :, 1]
 

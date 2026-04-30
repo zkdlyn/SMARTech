@@ -1133,7 +1133,7 @@
       "logo_order": true,
       "pubmat_quality": true,
       "readability": true,
-      "watermark": true,
+      "watermark": false,
       "spelling": true
     },
     "notes": ""
