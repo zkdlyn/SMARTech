@@ -352,6 +352,7 @@ def check_photo_quality(image) ->dict:
     details["mean_saturation"] = round(mean_sat, 1)
     if mean_sat < 30 and std_sat < 20:
         issues.append("Image appears grayscale or desaturated, use a colorized photo")
+    
     return _make_result(
         passed=len(issues) == 0,
         label_ok="Photo quality OK",
