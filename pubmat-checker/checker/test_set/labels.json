@@ -135,83 +135,6 @@
     "notes": "Watermark missing."
   },
   {
-    "image": "test_10.jpg",
-    "post_type": "other",
-    "collaborators": [
-      "sk"
-    ],
-    "ground_truth": {
-      "logo_nyc": true,
-      "logo_bp": true,
-      "logo_sk": true,
-      "logo_order": true,
-      "pubmat_quality": true,
-      "readability": true,
-      "watermark": true
-    }
-  },
-  {
-    "image": "test_11.jpg",
-    "post_type": "other",
-    "collaborators": [
-      "sk"
-    ],
-    "ground_truth": {
-      "logo_nyc": true,
-      "logo_bp": true,
-      "logo_sk": true,
-      "logo_order": true,
-      "pubmat_quality": true,
-      "readability": true,
-      "watermark": true
-    }
-  },
-  {
-    "image": "test_12.jpg",
-    "post_type": "other",
-    "collaborators": [
-      "sk"
-    ],
-    "ground_truth": {
-      "logo_nyc": true,
-      "logo_bp": true,
-      "logo_sk": true,
-      "logo_order": true,
-      "pubmat_quality": true,
-      "readability": true,
-      "watermark": true
-    }
-  },
-  {
-    "image": "test_13.jpg",
-    "post_type": "other",
-    "collaborators": [
-      "sk"
-    ],
-    "ground_truth": {
-      "logo_nyc": true,
-      "logo_bp": true,
-      "logo_sk": true,
-      "logo_order": true,
-      "pubmat_quality": true,
-      "readability": true,
-      "watermark": true
-    }
-  },
-  {
-    "image": "test_14.png",
-    "post_type": "other",
-    "collaborators": [],
-    "ground_truth": {
-      "logo_nyc": true,
-      "logo_bp": true,
-      "logo_order": true,
-      "pubmat_quality": true,
-      "readability": true,
-      "watermark": true
-    }
-  },
-  {
     "image": "test_15.png",
     "post_type": "other",
     "collaborators": [
@@ -809,7 +732,7 @@
       "logo_nyc": true,
       "logo_bp": true,
       "logo_order": true,
-      "watermark": false,
+      "watermark": true,
       "pubmat_quality": true,
       "readability": true,
       "spelling": true
