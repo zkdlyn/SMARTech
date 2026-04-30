@@ -189,6 +189,7 @@ def check_watermark(image, precomputed_words=None, precomputed_boxes=None) -> di
     words_lower = [w.lower() for w in words]
     full_text = " ".join(words_lower)
     handle_details = {}
+    detected = []
     missing = []
 
     for handle in WATERMARK_HANDLES:
@@ -203,18 +204,21 @@ def check_watermark(image, precomputed_words=None, precomputed_boxes=None) -> di
         )
         found = best >= FUZZY_THRESHOLD
         handle_details[handle] = {"found": found, "score": round(best, 3)}
-        if not found:
+        if found:
+            detected.append(handle)
+        else:
             missing.append(handle)
-
-    passed = len(missing) == 0
+    # pass if at least one handle is found
+    passed = len(detected) > 0
     result= _make_result(
         passed=passed,
         label_ok="Watermark OK",
         label_fail="Watermark missing or incorrect",
-        remark_fail= f"Missing: {', '.join(missing)}",
+        remark_fail= "No watermark detected",
         level ="error",
     )
-    result["missing"] = missing
+    result["detected"] = detected
+    result["missing"]  = missing
     return result, boxes_abs
 
 def _mask_regions(image: np.ndarray, logo_boxes: list) -> np.ndarray:
@@ -575,79 +579,74 @@ def check_spelling_on_image(
     return annotated, result
 
 # ── Master report generator ───────────────────────────────────────────────────
-def generate_report(image, logo_model, post_type: str, collaborators:list=None) -> tuple:
-    """
-    Runs all checks and returns a unified audit report + annotated image.
-    docTR OCR is run exactly once and shared across all checks.
-
-    Which checks run is determined entirely by POST_TYPE_RULES for the given
-    post_type.
-
-    Returns:
-        audit (dict)    - full structured report
-        img   (ndarray) - annotated image with bounding boxes
-    """
-    
+def generate_report(image, logo_model, post_type: str, collaborators: list = None) -> tuple:
     rules = POST_TYPE_RULES.get(post_type.lower(), {})
 
     if image is None or image.size == 0:
         raise ValueError("Image could not be decoded or is empty.")
     img = image.copy()
     h_img = img.shape[0]
-    # --- build audit dict incrementally ---
+
     audit = {
-        "post_type":      post_type,
-        "overall":        None,         # filled in after all checks run
+        "post_type": post_type,
+        "overall":   None,
     }
+
     # Logo detection
     logo_result, detected, img_annotated = logo_report(
-        img, 
+        img,
         model=logo_model,
         conf_threshold=0.8,
         collaborators=collaborators or [],
     )
-    audit["logos"] = logo_result  
-    # Masked image for OCR 
-    logo_boxes_abs = _get_logo_boxes_abs(detected, img.shape)
-    masked_image   = _mask_regions(img_annotated, logo_boxes_abs)
+    audit["logos"] = logo_result
 
-    # OCR on masked image: logos and watermark strip are blank 
+    # Mask logo boxes on the ORIGINAL image (not annotated) for clean OCR
+    logo_boxes_abs = _get_logo_boxes_abs(detected, img.shape)
+    masked_image   = _mask_regions(img, logo_boxes_abs)          # ← fix 2: use img not img_annotated
+
+    # Single OCR pass on masked image
     ocr_words, ocr_confidences, ocr_boxes = _extract_ocr_data(_run_doctr(masked_image))
 
-
-    # Logo Order Check
+    # Logo order check
     logo_order = check_logo_order(detected, collaborators=collaborators or [])
     audit["logo_order"] = logo_order
 
-    # PubMat Quality Check
-    pubmat_quality = check_pubmat_quality(img)
-    audit["pubmat_quality"] = pubmat_quality
+    # Pubmat quality check
+    audit["pubmat_quality"] = check_pubmat_quality(img)
 
-    # Conditional checks based on post type rules:
-    
-    # Readability check
+    # Filter watermark strip words out FIRST — needed for readability and spelling
+    filtered = [                                                  # ← fix 1: moved up
+        (w, b, c) for w, b, c in zip(ocr_words, ocr_boxes, ocr_confidences)
+        if w.lower() not in WATERMARK_HANDLES
+    ]
+    content_words       = [f[0] for f in filtered]
+    content_boxes       = [f[1] for f in filtered]
+    content_confidences = [f[2] for f in filtered]
+
+    # Readability check — uses content_confidences not ocr_confidences
     if "readability_threshold" in rules:
-        threshold = rules["readability_threshold"]
-        readability = check_readability(ocr_confidences, threshold=threshold)
+        readability = check_readability(content_confidences, threshold=rules["readability_threshold"])  # ← fix 1
         audit["readability"] = readability
-    
+
+    # OCR reliability gate — uses content_words not ocr_words
     readability_ok = audit["readability"]["pass"] if "readability" in audit else True
-    no_text = len(ocr_words) == 0
+    no_text        = len(content_words) == 0                      # ← fix 3
     ocr_unreliable = not readability_ok or no_text
 
     # Watermark check
-
     if rules.get("requires_watermark"):
         if ocr_unreliable:
             audit["watermark"] = {
-                "pass": False,
-                "level": "warning",
-                "label": "Watermark check skipped",
-                "remark": "OCR unreliable: poor readability or no text detected",
+                "pass":    False,
+                "level":   "error",           # error not warning — can't confirm compliance
+                "label":   "Watermark check skipped",
+                "remark":  "OCR unreliable: poor readability or no text detected. Manual review required.",
                 "details": {},
                 "missing": [],
-        } 
+            }
         else:
+            # get words+boxes with y0 >= 0.85 from the ORIGINAL OCR output 
             bottom_pairs = [(w, b) for w, b in zip(ocr_words, ocr_boxes) if b[1] >= 0.85]
             watermark_result, watermark_boxes_abs = check_watermark(
                 image,
@@ -657,53 +656,48 @@ def generate_report(image, logo_model, post_type: str, collaborators:list=None) 
             audit["watermark"] = watermark_result
             for (x0, y0, x1, y1) in watermark_boxes_abs:
                 cv2.rectangle(img_annotated, (x0, y0), (x1, y1), (255, 200, 0), 1)
-            label_text = "Watermark OK" if watermark_result["pass"] \
-                else f"Watermark MISSING: {', '.join(watermark_result['missing'])}"
-            
-            color = (0, 255, 0) if watermark_result["pass"] else (255, 0, 0)
-            cv2.putText(img_annotated, label_text, (10, h_img - 20), cv2.FONT_HERSHEY_SIMPLEX, 0.55, color, 2)
 
-    # filter out bottom strip (watermark) for spell check
-    filtered = [(w, b, c) for w, b, c in zip(ocr_words, ocr_boxes, ocr_confidences)
-            if w.lower() not in WATERMARK_HANDLES]
-    content_words       = [f[0] for f in filtered]
-    content_boxes       = [f[1] for f in filtered]
+            if watermark_result["pass"]:
+                label_text = f"Watermark OK — detected: {', '.join(watermark_result['detected'])}"
+                if watermark_result["missing"]:
+                    label_text += f" (not found: {', '.join(watermark_result['missing'])})"
+            else:
+                label_text = "Watermark MISSING — no handles detected"
 
+            color = (0, 255, 0) if watermark_result["pass"] else (0, 0, 255)
+            cv2.putText(img_annotated, label_text, (10, h_img - 20),
+                        cv2.FONT_HERSHEY_SIMPLEX, 0.55, color, 2)
 
     # Spelling check
     if rules.get("requires_spell_check"):
         if ocr_unreliable:
             audit["spelling"] = {
-                "pass": True,   # True so it doesn't trigger an error-level fail
-                "level": "warning",
-                "label": "Spelling check skipped",
-                "remark": "OCR unreliable: poor readability or no text detected",
+                "pass":    True,
+                "level":   "warning",
+                "label":   "Spelling check skipped",
+                "remark":  "OCR unreliable: poor readability or no text detected",
                 "details": {"errors": []},
             }
         else:
             img_annotated, spell_result = check_spelling_on_image(
-            img_annotated, content_words, content_boxes)
+                img_annotated, content_words, content_boxes)
             audit["spelling"] = spell_result
 
     # SGD check
     if rules.get("requires_sgd"):
         audit["sgd"] = check_sgd(ocr_words)
 
-    # Photo 
+    # Photo quality check
     if rules.get("check_photo_quality"):
-        audit["photo_quality"] = check_photo_quality(
-            img)
+        audit["photo_quality"] = check_photo_quality(img)
 
-
-    # 8. Overall pass/fail
-
-    SKIP_KEYS  = {"post_type", "overall", "logos"}
+    # Overall pass/fail — warnings never cause FAIL
+    SKIP_KEYS = {"post_type", "overall", "logos"}
     overall_pass = all(
-    v["pass"] or v.get("level") != "error"
-    for k, v in audit.items()
-    if k not in SKIP_KEYS and isinstance(v, dict) and "pass" in v
-)
+        v["pass"] or v.get("level") != "error"
+        for k, v in audit.items()
+        if k not in SKIP_KEYS and isinstance(v, dict) and "pass" in v
+    )
     audit["overall"] = "PASS" if overall_pass else "FAIL"
- 
-    return audit, img_annotated
 
+    return audit, img_annotated
