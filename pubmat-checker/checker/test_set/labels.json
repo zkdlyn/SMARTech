@@ -3,18 +3,21 @@
     "image": "test_1.jpg",
     "post_type": "other",
     "collaborators": [
-      "sk"
+      "sk",
+      "yorp"
     ],
     "ground_truth": {
       "logo_nyc": true,
-      "logo_bp": true,
-      "logo_order": true,
-      "watermark": true,
+      "logo_bp": false,
+      "logo_sk":false,
+      "logo_yorp": true,
+      "logo_order": false,
+      "watermark": false,
       "pubmat_quality": true,
       "readability": true,
-      "spelling": true
+      "spelling": false
     },
-    "notes": ""
+    "notes": "wrong SK, incorrect order, no wm"
   },
   {
     "image": "test_2.jpg",
@@ -25,7 +28,6 @@
       "logo_bp": true,
       "logo_order": true,
       "pubmat_quality": true,
-      "readability": true,
       "photo_quality": true
     }
   },
@@ -45,7 +47,7 @@
       "pubmat_quality": true,
       "watermark":false,
       "readability": true,
-      "spelling": true
+      "spelling": false
     },
     "notes": "BP logo missing, Watermark missing."
   },
@@ -59,7 +61,8 @@
       "logo_order": true,
       "watermark": true,
       "pubmat_quality": true,
-      "readability": true
+      "readability": true,
+      "spelling": true
     }
   },
   {
@@ -135,6 +138,85 @@
     "notes": "Watermark missing."
   },
   {
+    "image": "test_10.jpg",
+    "post_type": "other",
+    "collaborators": [
+      "sk"
+    ],
+    "ground_truth": {
+      "logo_nyc": false,
+      "logo_bp": false,
+      "logo_sk": false,
+      "logo_order": false,
+      "pubmat_quality": true,
+      "readability": true,
+      "watermark": false,
+      "spelling": true
+    },
+    "notes": "No watermark, No logos"
+  },
+  {
+    "image": "test_11.jpg",
+    "post_type": "holiday",
+    "collaborators": [
+    ],
+    "ground_truth": {
+      "logo_nyc": false,
+      "logo_bp": false,
+      "logo_order": false,
+      "pubmat_quality": true,
+      "readability": true,
+      "watermark": false,
+      "spelling": true
+    },
+    "notes": "No watermark, No logos"
+  },
+  {
+    "image": "test_12.jpg",
+    "post_type": "quote",
+    "collaborators": [
+    ],
+    "ground_truth": {
+      "logo_nyc": true,
+      "logo_bp": true,
+      "logo_order": true,
+      "pubmat_quality": true,
+      "readability": true,
+      "spelling": true
+    },
+    "notes": ""
+  },
+  {
+    "image": "test_13.jpg",
+    "post_type": "photo",
+    "collaborators": [
+    ],
+    "ground_truth": {
+      "logo_nyc": true,
+      "logo_bp": true,
+      "logo_order": true,
+      "pubmat_quality": true,
+      "photo_quality": false
+    },
+    "notes": "Low Resolution"
+  },
+  {
+    "image": "test_14.jpg",
+    "post_type": "photo",
+    "collaborators": [
+      ""
+    ],
+    "ground_truth": {
+      "logo_nyc": true,
+      "logo_bp": true,
+      "logo_order": true,
+      "pubmat_quality": true,
+      "photo_quality": false
+
+    },
+    "notes": "Photo too bright."
+  },
+  {
     "image": "test_15.png",
     "post_type": "other",
     "collaborators": [
@@ -150,7 +232,7 @@
       "pubmat_quality": true,
       "readability": true,
       "watermark": false,
-      "spelling": true
+      "spelling": false
     },
     "notes": "Watermark Missing"
   },
@@ -243,7 +325,8 @@
       "logo_order": true,
       "pubmat_quality": true,
       "readability": true,
-      "watermark": true
+      "watermark": true,
+      "spelling": true
     }
   },
   {
@@ -358,7 +441,7 @@
       "logo_order": false,
       "watermark": false,
       "pubmat_quality": true,
-      "readability": true,
+      "readability": false,
       "spelling":true
     },
     "notes": "BP incorrect, Logo order invalid. Watermark missing."
@@ -401,7 +484,8 @@
       "logo_order": false,
       "watermark": true,
       "pubmat_quality": true,
-      "readability": true
+      "readability": true,
+      "spelling": true
     },
     "notes": "No Logos"
   },
@@ -490,21 +574,7 @@
     },
     "notes": "No SGD"
   },
-  {
-    "image": "test_93.jpg",
-    "post_type": "advisory",
-    "collaborators": [],
-    "ground_truth": {
-      "logo_nyc": true,
-      "logo_bp": true,
-      "logo_order": true,
-      "pubmat_quality": true,
-      "readability": true,
-      "sgd": true,
-      "spelling":true
-    },
-    "notes": ""
-  },
+
   {
     "image": "test_40.jpg",
     "post_type": "holiday",
@@ -588,6 +658,21 @@
     },
     "notes": ""
   },
+    {
+    "image": "test_46.jpg",
+    "post_type": "other",
+    "collaborators": [],
+    "ground_truth": {
+      "logo_nyc": true,
+      "logo_bp": true,
+      "logo_order": true,
+      "watermark": false,
+      "pubmat_quality": true,
+      "readability": true,
+      "spelling": true
+    },
+    "notes": "Watermark missing."
+  },
   {
     "image": "test_47.png",
     "post_type": "news",
@@ -603,6 +688,7 @@
     },
     "notes": ""
   },
+  
   {
     "image": "test_49.jpg",
     "post_type": "other",
@@ -667,17 +753,18 @@
     "notes": ""
   },
   {
-    "image": "test_101.jpg",
-    "post_type": "photo",
+    "image": "test_53.jpg",
+    "post_type": "quote",
     "collaborators": [],
     "ground_truth": {
       "logo_nyc": true,
       "logo_bp": true,
       "logo_order": true,
       "pubmat_quality": true,
-      "photo_quality": false
+      "readability": true,
+      "spelling": false
     },
-    "notes": "Photo pixelated and low quality."
+    "notes": "Incorrect spelling"
   },
   {
     "image": "test_54.jpg",
@@ -737,7 +824,7 @@
       "readability": true,
       "spelling": true
     },
-    "notes": "Watermark missing."
+    "notes": "."
   },
   {
     "image": "test_58.jpg",
@@ -757,16 +844,17 @@
   {
     "image": "test_59.jpg",
     "post_type": "other",
-    "collaborators": ["yorp"],
+    "collaborators": ["yorp", "sk"],
     "ground_truth": {
       "logo_nyc": true,
       "logo_bp": true,
       "logo_yorp": true,
+      "logo_sk": false,
       "logo_order": true,
       "watermark": false,
       "pubmat_quality": true,
       "readability": true,
-      "spelling": true
+      "spelling": false
     },
     "notes": "No watermark"
   },
@@ -781,7 +869,7 @@
       "watermark": true,
       "pubmat_quality": true,
       "readability": true,
-      "spelling": true
+      "spelling": false
     },
     "notes": ""
   },
@@ -855,7 +943,7 @@
       "watermark": false,
       "pubmat_quality": true,
       "readability": true,
-      "spelling": true
+      "spelling": false
     },
     "notes": "Logo order wrong. Watermark missing."
   },
@@ -869,13 +957,13 @@
       "logo_nyc": false,
       "logo_bp": true,
       "logo_sk": true,
-      "logo_order": false,
+      "logo_order": true,
       "watermark": false,
       "pubmat_quality": true,
       "readability": true,
       "spelling": true
     },
-    "notes": "Logo order wrong \u2014 NYC rightmost. Watermark missing."
+    "notes": "no watermark, incorrect nyc logo"
   },
   {
     "image": "test_66.png",
@@ -913,17 +1001,17 @@
   {
     "image": "test_68.jpg",
     "post_type": "other",
-    "collaborators": [],
+    "collaborators": ["yorp"],
     "ground_truth": {
       "logo_nyc": true,
       "logo_bp": true,
       "logo_order": true,
-      "watermark": true,
+      "watermark": false,
       "pubmat_quality": true,
       "readability": true,
       "spelling": true
     },
-    "notes": ""
+    "notes": "no watermark"
   },
   {
     "image": "test_69.jpg",
@@ -944,19 +1032,17 @@
     "image": "test_70.jpg",
     "post_type": "news",
     "collaborators": [
-      "sk"
     ],
     "ground_truth": {
       "logo_nyc": true,
       "logo_bp": true,
-      "logo_sk": true,
       "logo_order": true,
       "watermark": true,
       "pubmat_quality": true,
       "readability": true,
       "spelling": true
     },
-    "notes": "Logo order wrong. Watermark missing."
+    "notes": ""
   },
   {
     "image": "test_71.jpg",
@@ -988,7 +1074,7 @@
       "watermark": false,
       "pubmat_quality": true,
       "readability": true,
-      "spelling": true
+      "spelling": false
     },
     "notes": "Watermark missing. Incorrect SK BP YORP logos"
   },
@@ -1288,6 +1374,21 @@
     },
     "notes": ""
   },
+    {
+    "image": "test_93.jpg",
+    "post_type": "advisory",
+    "collaborators": [],
+    "ground_truth": {
+      "logo_nyc": true,
+      "logo_bp": true,
+      "logo_order": true,
+      "pubmat_quality": true,
+      "readability": true,
+      "sgd": true,
+      "spelling":true
+    },
+    "notes": ""
+  },
   {
     "image": "test_94.jpg",
     "post_type": "news",
@@ -1373,7 +1474,7 @@
       "watermark": false,
       "pubmat_quality": true,
       "readability": true,
-      "spelling": true
+      "spelling": false
     },
     "notes": "Watermark missing."
   },
@@ -1391,22 +1492,7 @@
     "notes": ""
   },
   {
-    "image": "test_46.jpg",
-    "post_type": "other",
-    "collaborators": [],
-    "ground_truth": {
-      "logo_nyc": true,
-      "logo_bp": true,
-      "logo_order": true,
-      "watermark": false,
-      "pubmat_quality": true,
-      "readability": true,
-      "spelling": true
-    },
-    "notes": "Watermark missing."
-  },
-  {
-    "image": "test_48.jpg",
+    "image": "test_101.jpg",
     "post_type": "photo",
     "collaborators": [],
     "ground_truth": {
@@ -1414,9 +1500,9 @@
       "logo_bp": true,
       "logo_order": true,
       "pubmat_quality": true,
-      "photo_quality": true
+      "photo_quality": false
     },
-    "notes":""
+    "notes": "Photo pixelated and low quality."
   },
   {
     "image": "test_102.jpg",
@@ -1443,7 +1529,7 @@
       "logo_order": true,
       "pubmat_quality": true,
       "readability": false,
-      "spelling":false
+      "spelling":true
     },
     "notes": "Text too small."
   },
@@ -1508,5 +1594,21 @@
       "watermark": true
     },
     "notes": "image blurry"
+  },
+  {
+    "image": "test_108.jpg",
+    "post_type": "holiday",
+    "collaborators": [],
+    "ground_truth": {
+      "logo_nyc": true,
+      "logo_bp": true,
+      "logo_order": true,
+      "watermark": true,
+      "pubmat_quality": true,
+      "readability": true,
+      "spelling": true
+    },
+    "notes": ""
   }
+  
 ]
