@@ -1616,7 +1616,7 @@
     "collaborators": ["yorp"],
     "ground_truth": {
       "logo_nyc": true,
-      "logo_bp": true,
+      "logo_bp": false,
       "logo_yorp": true,
       "logo_order": true,
       "watermark": false,
