@@ -1609,6 +1609,106 @@
       "spelling": true
     },
     "notes": ""
+  },
+  {
+    "image": "test_109.jpg",
+    "post_type": "other",
+    "collaborators": ["yorp"],
+    "ground_truth": {
+      "logo_nyc": true,
+      "logo_bp": true,
+      "logo_yorp": true,
+      "logo_order": true,
+      "watermark": true,
+      "pubmat_quality": true,
+      "readability": true,
+      "spelling": true
+    },
+    "notes": ""
+  },
+  {
+    "image": "test_110.jpg",
+    "post_type": "other",
+    "collaborators": ["sk", "yorp"],
+    "ground_truth": {
+      "logo_nyc": false,
+      "logo_bp": false,
+      "logo_sk": true,
+      "logo_yorp": true,
+      "logo_order": false,
+      "watermark": true,
+      "pubmat_quality": true,
+      "readability": true,
+      "spelling": false
+    },
+    "notes": ""
+  },
+  {
+    "image": "test_111.jpg",
+    "post_type": "photo",
+    "collaborators": [],
+    "ground_truth": {
+      "logo_nyc": true,
+      "logo_bp": true,
+      "logo_order": true,
+      "pubmat_quality": true,
+      "photo_quality": true
+    },
+    "notes": ""
+  },
+  {
+    "image": "test_112.jpg",
+    "post_type": "photo",
+    "collaborators": [],
+    "ground_truth": {
+      "logo_nyc": true,
+      "logo_bp": true,
+      "logo_order": true,
+      "pubmat_quality": true,
+      "photo_quality": false
+    },
+    "notes": "Photo too dark"
+  },
+  {
+    "image": "test_113.jpg",
+    "post_type": "photo",
+    "collaborators": [],
+    "ground_truth": {
+      "logo_nyc": true,
+      "logo_bp": true,
+      "logo_order": true,
+      "pubmat_quality": true,
+      "photo_quality": true
+    },
+    "notes": ""
+  },
+  {
+    "image": "test_114.jpg",
+    "post_type": "photo",
+    "collaborators": [],
+    "ground_truth": {
+      "logo_nyc": true,
+      "logo_bp": true,
+      "logo_order": true,
+      "pubmat_quality": true,
+      "photo_quality": false
+    },
+    "notes": "Blurry photo"
+  },
+  {
+    "image": "test_115.jpg",
+    "post_type": "holiday",
+    "collaborators": [],
+    "ground_truth": {
+      "logo_nyc": true,
+      "logo_bp": true,
+      "logo_order": true,
+      "pubmat_quality": true,
+      "watermark": true,
+      "readability": true,
+      "spelling": true
+    },
+    "notes": ""
   }
   
 ]
