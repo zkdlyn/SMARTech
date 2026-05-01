@@ -321,6 +321,7 @@ def check_photo_quality(image) ->dict:
     """
     gray = cv2.cvtColor(image, cv2.COLOR_BGR2GRAY)
     h, w = image.shape[:2]
+    xres, yres = image.info['dpi'] if 'dpi' in image.info else (72, 72)  # default to 72 if not available
     min_w, min_h = 1080, 1080
     issues = []
     details = {}
@@ -328,10 +329,15 @@ def check_photo_quality(image) ->dict:
     # crop out template 
     cropped = image[0:end_y, 0:w]
     cropped_gray = gray[0:end_y, 0:w]
-    # Resolution
-    details["resolution"] = f"{w}x{h} (required at least {min_w}x{min_h})"
+
+    # Dimension
+    details["dimension"] = f"Dimensions: {w}x{h} "
     if w < min_w or h < min_h:
-        issues.append(f"Image is {w}x{h}, minimum is {min_w}x{min_h}")
+        issues.append(f"Image is {w}x{h}, minimum is 1080 x 1080 px")
+    # Resolution
+    details["resolution"] = f"Resolution: {xres}x{yres} dpi"
+    if xres < 300 or yres < 300:
+        issues.append(f"Low resolution: {xres}x{yres} dpi, ensure at least 300 dpi")
 
     # Brightness
     mean_brightness = float(np.mean(cropped_gray))
