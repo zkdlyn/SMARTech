@@ -10,10 +10,11 @@ ngos
 bagong
 pilipinas
 nycpilipinas
-nyc.gov.ph
-
+nycgovph
+tesda
 gov
-ad referendum
+ad 
+referendum
 egov
 sec
 asec
@@ -23,7 +24,6 @@ usec
 pres
 ai 
 bske
-
 sangguniang
 barangay 
 ang 
@@ -32,6 +32,5 @@ ng
 maligayang
 araw 
 webinar
-
-gipprogram@nyc.gov.ph
-hrmurecruitment@nyc.gov.ph
+gipprogramnycgovph
+hrmurecruitmentnycgovph
