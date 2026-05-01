@@ -1619,12 +1619,12 @@
       "logo_bp": true,
       "logo_yorp": true,
       "logo_order": true,
-      "watermark": true,
+      "watermark": false,
       "pubmat_quality": true,
       "readability": true,
       "spelling": true
     },
-    "notes": ""
+    "notes": "no watermark"
   },
   {
     "image": "test_110.jpg",
@@ -1636,12 +1636,12 @@
       "logo_sk": true,
       "logo_yorp": true,
       "logo_order": false,
-      "watermark": true,
+      "watermark": false,
       "pubmat_quality": true,
       "readability": true,
       "spelling": false
     },
-    "notes": ""
+    "notes": "no watermark, wrong nyc and bp logos, logo order wrong, spelling error"
   },
   {
     "image": "test_111.jpg",
