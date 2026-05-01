@@ -41995,7 +41995,7 @@ undap
 undayon
 undok
 undot
-undras
+undas
 unga
 ungal
 ungas
