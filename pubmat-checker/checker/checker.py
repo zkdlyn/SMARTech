@@ -88,12 +88,16 @@ def load_spell_checker(wordlist_paths: list[str]) -> SpellChecker:
     """
     Initialize SpellChecker and load Filipino/Tagalog + custom word lists.
     """
-    # Use language=None if you're ONLY using custom dictionaries,
-    # or "en" if you still want English base + your additions
     spell = SpellChecker(language="en")
 
     for path in wordlist_paths:
-        spell.word_frequency.load_text_file(path)
+        if not os.path.exists(path):
+            print(f"[WARNING] Word list not found, skipping: {path}")
+            continue
+        try:
+            spell.word_frequency.load_text_file(path)
+        except Exception as e:
+            print(f"[WARNING] Failed to load word list {path}: {e}")
 
     return spell
     
@@ -321,7 +325,6 @@ def check_photo_quality(image) ->dict:
     """
     gray = cv2.cvtColor(image, cv2.COLOR_BGR2GRAY)
     h, w = image.shape[:2]
-    xres, yres = image.info['dpi'] if 'dpi' in image.info else (72, 72)  # default to 72 if not available
     min_w, min_h = 1080, 1080
     issues = []
     details = {}
@@ -333,12 +336,8 @@ def check_photo_quality(image) ->dict:
     # Dimension
     details["dimension"] = f"Dimensions: {w}x{h} "
     if w < min_w or h < min_h:
-        issues.append(f"Image is {w}x{h}, minimum is 1080 x 1080 px")
-    # Resolution
-    details["resolution"] = f"Resolution: {xres}x{yres} dpi"
-    if xres < 300 or yres < 300:
-        issues.append(f"Low resolution: {xres}x{yres} dpi, ensure at least 300 dpi")
-
+        issues.append(f"Image is {w}x{h}, minimum is {min_w}x{min_h}")
+    
     # Brightness
     mean_brightness = float(np.mean(cropped_gray))
     details["brightness"] = round(mean_brightness, 1)
@@ -428,7 +427,7 @@ def check_logo_order(detected:dict, collaborators:list=None) -> dict:
     )
 
 
-def logo_report(image, model, conf_threshold:float=0.8, collaborators:list=None):
+def logo_report(image, model, conf_threshold:float=0.7, collaborators:list=None):
     """
     Run YOLO detection and generate a report dict for each logo, plus an annotated image.
     NYC and BP are always required.
@@ -506,57 +505,29 @@ def _get_logo_boxes_abs(detected: dict, img_shape: tuple) -> list:
     return boxes
 
 
-def check_spelling(text: str, spell: SpellChecker) -> list[dict]:
-    """
-    Check text and return a list of misspelled words with their positions.
-
-    """
-
-    words = spell.split_words(text)
-    misspelled = spell.unknown(words)
-    errors = []
-    search_start = 0
-
-    for word in words:
-        if word.lower() in misspelled:
-            # Find the word's position in the original text
-            idx = text.lower().find(word.lower(), search_start)
-            if idx != -1:
-                errors.append({
-                    "word": word,
-                    "start": idx,
-                    "end": idx + len(word),
-                    "suggestions": spell.candidates(word)
-                })
-                search_start = idx + len(word)
-
-    return errors
-
 # spell= load_spell_checker(SPELL_WORD_LISTS)
 
 def check_spelling_on_image(
     image: np.ndarray,
     ocr_words: list,
     ocr_boxes: list,
-    spell: SpellChecker | None = None,
+    spell: SpellChecker,
 ) -> tuple[np.ndarray, dict]:
     """
     Underlines misspelled word.
     """
-    if spell is None:
-        spell = load_spell_checker(SPELL_WORD_LISTS)
- 
+    
     h_img, w_img = image.shape[:2]
     annotated = image.copy()
  
     misspelled_set = spell.unknown(
-        [re.sub(r"[^a-zA-Z]", "", w) for w in ocr_words]
+        [re.sub(r"[^a-zA-Z\-]", "", w) for w in ocr_words]
     )
     misspelled_set = {w.lower() for w in misspelled_set if w}
  
     found_errors = []
     for word, (x0_r, y0_r, x1_r, y1_r) in zip(ocr_words, ocr_boxes):
-        clean_word = re.sub(r"[^a-zA-Z]", "", word).lower()
+        clean_word = re.sub(r"[^a-zA-Z\-]", "", word).lower()
         if clean_word not in misspelled_set:
             continue
  
@@ -589,6 +560,7 @@ def check_spelling_on_image(
 # ── Master report generator ───────────────────────────────────────────────────
 def generate_report(image, logo_model, post_type: str, collaborators: list = None) -> tuple:
     rules = POST_TYPE_RULES.get(post_type.lower(), {})
+    spell = load_spell_checker(SPELL_WORD_LISTS)
 
     if image is None or image.size == 0:
         raise ValueError("Image could not be decoded or is empty.")
@@ -623,8 +595,8 @@ def generate_report(image, logo_model, post_type: str, collaborators: list = Non
     # Pubmat quality check
     audit["pubmat_quality"] = check_pubmat_quality(img)
 
-    # Filter watermark strip words out FIRST — needed for readability and spelling
-    filtered = [                                                  # ← fix 1: moved up
+    # Filter watermark strip words out FIRST  needed for readability and spelling
+    filtered = [                                                  
         (w, b, c) for w, b, c in zip(ocr_words, ocr_boxes, ocr_confidences)
         if w.lower() not in WATERMARK_HANDLES
     ]
@@ -647,7 +619,7 @@ def generate_report(image, logo_model, post_type: str, collaborators: list = Non
         if ocr_unreliable:
             audit["watermark"] = {
                 "pass":    False,
-                "level":   "error",           # error not warning — can't confirm compliance
+                "level":   "error",           
                 "label":   "Watermark check skipped",
                 "remark":  "OCR unreliable: poor readability or no text detected. Manual review required.",
                 "details": {},
@@ -688,7 +660,7 @@ def generate_report(image, logo_model, post_type: str, collaborators: list = Non
             }
         else:
             img_annotated, spell_result = check_spelling_on_image(
-                img_annotated, content_words, content_boxes)
+                img_annotated, content_words, content_boxes, spell)
             audit["spelling"] = spell_result
 
     # SGD check
