@@ -583,7 +583,7 @@ def generate_report(image, logo_model, post_type: str, collaborators: list = Non
 
     # Mask logo boxes on the ORIGINAL image (not annotated) for clean OCR
     logo_boxes_abs = _get_logo_boxes_abs(detected, img.shape)
-    masked_image   = _mask_regions(img, logo_boxes_abs)          # ← fix 2: use img not img_annotated
+    masked_image   = _mask_regions(img, logo_boxes_abs)          
 
     # Single OCR pass on masked image
     ocr_words, ocr_confidences, ocr_boxes = _extract_ocr_data(_run_doctr(masked_image))
@@ -606,12 +606,12 @@ def generate_report(image, logo_model, post_type: str, collaborators: list = Non
 
     # Readability check — uses content_confidences not ocr_confidences
     if "readability_threshold" in rules:
-        readability = check_readability(content_confidences, threshold=rules["readability_threshold"])  # ← fix 1
+        readability = check_readability(content_confidences, threshold=rules["readability_threshold"])  
         audit["readability"] = readability
 
     # OCR reliability gate — uses content_words not ocr_words
     readability_ok = audit["readability"]["pass"] if "readability" in audit else True
-    no_text        = len(content_words) == 0                      # ← fix 3
+    no_text        = len(content_words) == 0                     
     ocr_unreliable = not readability_ok or no_text
 
     # Watermark check
