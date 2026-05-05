@@ -2,7 +2,7 @@
 checker.py — Pubmat validation functions for NYC post compliance checks.
 """
 
-from unittest import result
+
 
 import cv2
 import numpy as np
@@ -561,6 +561,7 @@ def check_spelling_on_image(
 def generate_report(image, logo_model, post_type: str, collaborators: list = None) -> tuple:
     rules = POST_TYPE_RULES.get(post_type.lower(), {})
     spell = load_spell_checker(SPELL_WORD_LISTS)
+    crop_area = rules.get("crop_area")
 
     if image is None or image.size == 0:
         raise ValueError("Image could not be decoded or is empty.")
@@ -585,8 +586,6 @@ def generate_report(image, logo_model, post_type: str, collaborators: list = Non
     logo_boxes_abs = _get_logo_boxes_abs(detected, img.shape)
     masked_image   = _mask_regions(img, logo_boxes_abs)          
 
-    # Single OCR pass on masked image
-    ocr_words, ocr_confidences, ocr_boxes = _extract_ocr_data(_run_doctr(masked_image))
 
     # Logo order check
     logo_order = check_logo_order(detected, collaborators=collaborators or [])
@@ -594,6 +593,9 @@ def generate_report(image, logo_model, post_type: str, collaborators: list = Non
 
     # Pubmat quality check
     audit["pubmat_quality"] = check_pubmat_quality(img)
+
+    # Single OCR pass on masked image
+    ocr_words, ocr_confidences, ocr_boxes = _extract_ocr_data(_run_doctr(masked_image))
 
     # Filter watermark strip words out FIRST  needed for readability and spelling
     filtered = [                                                  
