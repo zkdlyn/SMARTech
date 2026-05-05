@@ -73,14 +73,6 @@ def _make_result(passed: bool, label_ok: str, label_fail: str,
         "level": level,
     }
 
-def cropper(image: np.ndarray, crop: tuple) -> np.ndarray:
-    h, w = image.shape[:2]
-    x0 = int(crop[0] * w)
-    y0 = int(crop[1] * h)
-    x1 = int(crop[2] * w)
-    y1 = int(crop[3] * h)
-    return image[y0:y1, x0:x1]
-
 SPELL_WORD_LISTS = [
     "word_list/tagalog_word_list.txt",   
     "word_list/custom_list.txt",  
@@ -130,7 +122,7 @@ POST_TYPE_RULES = {
     },
     "resolution": {
         "readability_threshold": 0.70,
-        "requires_sgd": "error",
+        "requires_sgd": "warning",
         "requires_spell_check": "warning"
     },
     "opportunity": {
