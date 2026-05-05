@@ -652,11 +652,11 @@ def generate_report(image, logo_model, post_type: str, collaborators: list = Non
                 cv2.rectangle(img_annotated, (x0, y0), (x1, y1), (255, 200, 0), 1)
 
             if watermark_result["pass"]:
-                label_text = f"Watermark OK — detected: {', '.join(watermark_result['detected'])}"
+                label_text = f"Watermark OK - detected: {', '.join(watermark_result['detected'])}"
                 if watermark_result["missing"]:
                     label_text += f" (not found: {', '.join(watermark_result['missing'])})"
             else:
-                label_text = "Watermark MISSING — no handles detected"
+                label_text = "Watermark MISSING - no handles detected"
 
             color = (0, 255, 0) if watermark_result["pass"] else (0, 0, 255)
             cv2.putText(img_annotated, label_text, (10, h_img - 20),
