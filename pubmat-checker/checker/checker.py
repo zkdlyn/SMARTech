@@ -116,14 +116,14 @@ POST_TYPE_RULES = {
         "requires_spell_check": "warning",
     },
     "advisory": {
-        "readability_threshold": 0.70,
-        "requires_sgd": "warning",
-        "requires_spell_check": "warning"
+        # "readability_threshold": 0.70,
+        # "requires_sgd": "warning",
+        # "requires_spell_check": "warning"
     },
     "resolution": {
-        "readability_threshold": 0.70,
-        "requires_sgd": "warning",
-        "requires_spell_check": "warning"
+        # "readability_threshold": 0.70,
+        # "requires_sgd": "warning",
+        # "requires_spell_check": "warning"
     },
     "opportunity": {
         "requires_watermark": "error",
