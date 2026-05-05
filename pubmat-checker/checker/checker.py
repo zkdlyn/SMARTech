@@ -623,11 +623,10 @@ def generate_report(image, logo_model, post_type: str, collaborators: list = Non
         if rules.get("readability_threshold"):
             readability = check_readability(content_confidences, threshold=rules["readability_threshold"])  
             audit["readability"] = readability
-
-    # OCR reliability gate — uses content_words not ocr_words
-    readability_ok = audit["readability"]["pass"] if "readability" in audit else True
-    no_text        = len(content_words) == 0                     
-    ocr_unreliable = not readability_ok or no_text
+        # OCR reliability gate — uses content_words not ocr_words
+        readability_ok = audit["readability"]["pass"] if "readability" in audit else True
+        no_text        = len(content_words) == 0                     
+        ocr_unreliable = not readability_ok or no_text
 
     # Watermark check
     if rules.get("requires_watermark"):
