@@ -73,6 +73,14 @@ def _make_result(passed: bool, label_ok: str, label_fail: str,
         "level": level,
     }
 
+def cropper(image: np.ndarray, crop: tuple) -> np.ndarray:
+    h, w = image.shape[:2]
+    x0 = int(crop[0] * w)
+    y0 = int(crop[1] * h)
+    x1 = int(crop[2] * w)
+    y1 = int(crop[3] * h)
+    return image[y0:y1, x0:x1]
+
 SPELL_WORD_LISTS = [
     "word_list/tagalog_word_list.txt",   
     "word_list/custom_list.txt",  
@@ -107,40 +115,34 @@ def load_spell_checker(wordlist_paths: list[str]) -> SpellChecker:
 POST_TYPE_RULES = {
     "news": {
         "requires_watermark": "error",
-        "requires_template": "error",
         "readability_threshold": 0.70,
         "requires_spell_check": "warning",
+        "selected_area": (0.1, 0.65, 1, 1)
     },
     "quotes": {
-        "requires_template": "error",
         "readability_threshold": 0.70,
         "requires_spell_check": "warning",
     },
     "advisory": {
-        "requires_template": "error",
         "readability_threshold": 0.70,
         "requires_sgd": "error",
         "requires_spell_check": "warning"
     },
     "resolution": {
-        "requires_template": "error",
         "readability_threshold": 0.70,
         "requires_sgd": "error",
         "requires_spell_check": "warning"
     },
     "opportunity": {
         "requires_watermark": "error",
-        "requires_template": "error",
         "readability_threshold": 0.70,
         "requires_spell_check": "warning",
     },
     "photo": {
-        "requires_template": "error",
         "check_photo_quality": "warning"
     },
     "holiday": {
         "requires_watermark": "error",
-        "requires_template": "error",
         "readability_threshold": 0.50,
         "requires_spell_check": "warning",
     },
@@ -246,6 +248,19 @@ def _mask_regions(image: np.ndarray, logo_boxes: list) -> np.ndarray:
 
     return masked
 
+def _whiten_area(image: np.ndarray, crop: tuple) -> np.ndarray:
+    """Return a copy of `image` where everything outside the crop is white."""
+    h, w = image.shape[:2]
+    x0 = int(crop[0] * w)
+    y0 = int(crop[1] * h)
+    x1 = int(crop[2] * w)
+    y1 = int(crop[3] * h)
+
+    masked = np.full_like(image, 255)
+
+    masked[y0:y1, x0:x1] = image[y0:y1, x0:x1]
+    return masked
+
 def check_readability(confidences:list, threshold: float) -> dict:
     """
     OCR-confidence-based readability check.
@@ -260,7 +275,7 @@ def check_readability(confidences:list, threshold: float) -> dict:
 
     score = round(sum(confidences) / len(confidences),3)
     passed = score >= threshold 
-    if score >= threshold:
+    if passed:
         label = "Readable"
     elif score >= threshold * 0.5:
         label = "Moderately readable"
@@ -561,7 +576,7 @@ def check_spelling_on_image(
 def generate_report(image, logo_model, post_type: str, collaborators: list = None) -> tuple:
     rules = POST_TYPE_RULES.get(post_type.lower(), {})
     spell = load_spell_checker(SPELL_WORD_LISTS)
-    crop_area = rules.get("crop_area")
+    selected_area = rules.get("selected_area")
 
     if image is None or image.size == 0:
         raise ValueError("Image could not be decoded or is empty.")
@@ -594,22 +609,28 @@ def generate_report(image, logo_model, post_type: str, collaborators: list = Non
     # Pubmat quality check
     audit["pubmat_quality"] = check_pubmat_quality(img)
 
-    # Single OCR pass on masked image
-    ocr_words, ocr_confidences, ocr_boxes = _extract_ocr_data(_run_doctr(masked_image))
+    # whiten outside selected area if specified, to prevent OCR distractions from irrelevant text/logos
+    if rules.get("selected_area"):
+        masked_image = _whiten_area(masked_image, rules["selected_area"])
 
-    # Filter watermark strip words out FIRST  needed for readability and spelling
-    filtered = [                                                  
-        (w, b, c) for w, b, c in zip(ocr_words, ocr_boxes, ocr_confidences)
-        if w.lower() not in WATERMARK_HANDLES
-    ]
-    content_words       = [f[0] for f in filtered]
-    content_boxes       = [f[1] for f in filtered]
-    content_confidences = [f[2] for f in filtered]
+    # readability check
+    if rules.get("readability_threshold"):
+        # Single OCR pass on masked image (only if readability or watermark checks are needed)
+        ocr_words, ocr_confidences, ocr_boxes = _extract_ocr_data(_run_doctr(masked_image))
 
-    # Readability check — uses content_confidences not ocr_confidences
-    if "readability_threshold" in rules:
-        readability = check_readability(content_confidences, threshold=rules["readability_threshold"])  
-        audit["readability"] = readability
+        # Filter watermark strip words out FIRST  needed for readability and spelling
+        filtered = [                                                  
+            (w, b, c) for w, b, c in zip(ocr_words, ocr_boxes, ocr_confidences)
+            if w.lower() not in WATERMARK_HANDLES
+        ]
+        content_words       = [f[0] for f in filtered]
+        content_boxes       = [f[1] for f in filtered]
+        content_confidences = [f[2] for f in filtered]
+
+        # Readability check — uses content_confidences 
+        if rules.get("readability_threshold"):
+            readability = check_readability(content_confidences, threshold=rules["readability_threshold"])  
+            audit["readability"] = readability
 
     # OCR reliability gate — uses content_words not ocr_words
     readability_ok = audit["readability"]["pass"] if "readability" in audit else True
