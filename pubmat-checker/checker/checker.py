@@ -117,7 +117,7 @@ POST_TYPE_RULES = {
     },
     "advisory": {
         "readability_threshold": 0.70,
-        "requires_sgd": "error",
+        "requires_sgd": "warning",
         "requires_spell_check": "warning"
     },
     "resolution": {
