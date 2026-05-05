@@ -316,9 +316,9 @@ def check_sgd(ocr_words: list) ->dict:
     return _make_result(
         passed=found,
         label_ok="SGD present",
-        label_fail="SGD MISSING",
+        label_fail="SGD MAY BE MISSING",
         remark_fail="Use SGD for resolutions/advisories",
-        level ="error",
+        level ="warning",
     )
 
 
