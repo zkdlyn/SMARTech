@@ -434,7 +434,7 @@ def check_logo_order(detected:dict, collaborators:list=None) -> dict:
     )
 
 
-def logo_report(image, model, conf_threshold:float=0.7, collaborators:list=None):
+def logo_report(image, model, conf_threshold:float=0.8, collaborators:list=None):
     """
     Run YOLO detection and generate a report dict for each logo, plus an annotated image.
     NYC and BP are always required.
