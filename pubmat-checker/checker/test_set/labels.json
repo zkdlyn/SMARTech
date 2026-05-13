@@ -1255,15 +1255,15 @@
     "collaborators": [
     ],
     "ground_truth": {
-      "logo_nyc": false,
+      "logo_nyc": true,
       "logo_bp": true,
-      "logo_order": false,
-      "watermark": false,
+      "logo_order": true,
+      "watermark": true,
       "pubmat_quality": true,
       "readability": true,
       "spelling": true
     },
-    "notes": "Logo order wrong. Watermark missing."
+    "notes": ""
   },
   {
     "image": "test_86.jpg",
