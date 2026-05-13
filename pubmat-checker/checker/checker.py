@@ -568,7 +568,6 @@ def check_spelling_on_image(
 def generate_report(image, logo_model, post_type: str, collaborators: list = None) -> tuple:
     rules = POST_TYPE_RULES.get(post_type.lower(), {})
     spell = load_spell_checker(SPELL_WORD_LISTS)
-    selected_area = rules.get("selected_area")
 
     if image is None or image.size == 0:
         raise ValueError("Image could not be decoded or is empty.")
@@ -592,7 +591,6 @@ def generate_report(image, logo_model, post_type: str, collaborators: list = Non
     # Mask logo boxes on the ORIGINAL image (not annotated) for clean OCR
     logo_boxes_abs = _get_logo_boxes_abs(detected, img.shape)
     masked_image   = _mask_regions(img, logo_boxes_abs)          
-
 
     # Logo order check
     logo_order = check_logo_order(detected, collaborators=collaborators or [])
