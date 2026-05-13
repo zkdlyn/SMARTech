@@ -1,0 +1,31 @@
+# 20/20 iterations complete ✅ (8742.26s)
+# Results saved to C:\Users\user\Documents\DARLYN\SMARTech\pubmat-checker\training\runs\detect\tune_v26s
+# Best fitness=0.86309 observed at iteration 18
+# Best fitness metrics are {'metrics/precision(B)': 0.94755, 'metrics/recall(B)': 0.93459, 'metrics/mAP50(B)': 0.97116, 'metrics/mAP50-95(B)': 0.86309, 'val/box_loss': 0.34788, 'val/cls_loss': 0.23868, 'val/dfl_loss': 0.00216, 'fitness': 0.86309}
+# Best fitness model is C:\Users\user\Documents\DARLYN\SMARTech\pubmat-checker\training\runs\detect\tune_v26s\weights
+lr0: 0.00943
+lrf: 0.01
+momentum: 0.98
+weight_decay: 0.00088
+warmup_epochs: 2.86383
+warmup_momentum: 0.78833
+box: 5.78288
+cls: 0.42553
+cls_pw: 0.00107
+dfl: 1.43178
+hsv_h: 0.01552
+hsv_s: 0.71166
+hsv_v: 0.49503
+degrees: 0.01023
+translate: 0.16213
+scale: 0.34998
+shear: 0.00064
+perspective: 0.0
+flipud: 0.00215
+fliplr: 0.47615
+bgr: 0.00443
+mosaic: 0.98824
+mixup: 7.0e-05
+cutmix: 0.00207
+copy_paste: 0.0
+close_mosaic: 8

@@ -583,7 +583,7 @@ def generate_report(image, logo_model, post_type: str, collaborators: list = Non
     logo_result, detected, img_annotated = logo_report(
         img,
         model=logo_model,
-        conf_threshold=0.8,
+        conf_threshold=0.7,
         collaborators=collaborators or [],
     )
     audit["logos"] = logo_result

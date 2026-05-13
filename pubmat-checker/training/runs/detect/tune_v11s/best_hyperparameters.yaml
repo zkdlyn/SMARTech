@@ -1,0 +1,31 @@
+# 20/20 iterations complete ✅ (7106.76s)
+# Results saved to C:\Users\user\Documents\DARLYN\SMARTech\pubmat-checker\training\runs\detect\tune3
+# Best fitness=0.84505 observed at iteration 1
+# Best fitness metrics are {'metrics/precision(B)': 0.9248, 'metrics/recall(B)': 0.90804, 'metrics/mAP50(B)': 0.95799, 'metrics/mAP50-95(B)': 0.84505, 'val/box_loss': 0.47908, 'val/cls_loss': 0.44256, 'val/dfl_loss': 0.87395, 'fitness': 0.84505}
+# Best fitness model is C:\Users\user\Documents\DARLYN\SMARTech\pubmat-checker\training\runs\detect\tune3\weights
+lr0: 0.01
+lrf: 0.01
+momentum: 0.937
+weight_decay: 0.0005
+warmup_epochs: 3.0
+warmup_momentum: 0.8
+box: 7.5
+cls: 0.5
+cls_pw: 0.0
+dfl: 1.5
+hsv_h: 0.015
+hsv_s: 0.7
+hsv_v: 0.4
+degrees: 0.0
+translate: 0.1
+scale: 0.5
+shear: 0.0
+perspective: 0.0
+flipud: 0.0
+fliplr: 0.5
+bgr: 0.0
+mosaic: 1.0
+mixup: 0.0
+cutmix: 0.0
+copy_paste: 0.0
+close_mosaic: 10
