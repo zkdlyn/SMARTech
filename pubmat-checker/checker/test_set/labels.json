@@ -567,12 +567,8 @@
       "logo_nyc": true,
       "logo_bp": true,
       "logo_order": true,
-      "pubmat_quality": true,
-      "readability": true,
-      "sgd": false,
-      "spelling": true
-    },
-    "notes": "No SGD"
+      "pubmat_quality": true
+    }
   },
 
   {
@@ -639,11 +635,9 @@
       "logo_nyc": true,
       "logo_bp": true,
       "logo_order": true,
-      "pubmat_quality": true,
-      "readability": true,
-      "sgd": false
+      "pubmat_quality": true
     },
-    "notes": "no sgd"
+    "notes": ""
   },
   {
     "image": "test_45.jpg",
@@ -715,10 +709,7 @@
       "logo_nyc": true,
       "logo_bp": true,
       "logo_order": true,
-      "pubmat_quality": true,
-      "readability": true,
-      "sgd": true,
-      "spelling": true
+      "pubmat_quality": true
     },
     "notes": ""
   },
@@ -1382,10 +1373,7 @@
       "logo_nyc": true,
       "logo_bp": true,
       "logo_order": true,
-      "pubmat_quality": true,
-      "readability": true,
-      "sgd": true,
-      "spelling":true
+      "pubmat_quality": true
     },
     "notes": ""
   },
